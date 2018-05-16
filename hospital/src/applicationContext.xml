@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	
+	<!-- SessionFactory对象 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+	</bean>
+	
+	
+	<!-- HibernateTemplate对象 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	
+	<!-- 添加事务管理配置 -->
+	<!-- 1.创建平台事务管理器 -->
+	<bean id="transactionManager"
+	     class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- 2.创建事务通知 -->
+	<tx:advice id="txAdivce" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" isolation="DEFAULT" propagation="REQUIRED"/>
+			<tx:method name="update*" isolation="DEFAULT" propagation="REQUIRED"/>
+			<tx:method name="delete*" isolation="DEFAULT" propagation="REQUIRED"/>
+			<tx:method name="find*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
+			<tx:method name="*" isolation="DEFAULT" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 3.创建事务切面 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* com.niit.service.impl.*Service.*(..))" id="myPt"/>
+		<aop:advisor advice-ref="txAdivce" pointcut-ref="myPt"/>
+	</aop:config>
+	
+	<!--springmvc 配置-->
+	<!--include包含 exclude不包含,排除-->
+    
+    <!--spring容器管理非控制器组件-->
+    <!--这里是让spring扫描所有组件,但是不扫描控制器-->
+    <context:component-scan base-package="com.niit">
+        <context:exclude-filter type="annotation"
+            expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+	
+	
+	
+</beans>
+

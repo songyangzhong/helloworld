@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.niit.model.Doctor" table="t_doctor" schema="hospital">
+        <id name="doctorId" column="DoctorId"/>
+        <property name="departmentId" column="DepartmentId"/>
+        <property name="doctorName" column="DoctorName"/>
+        <property name="password" column="Password"/>
+        <property name="salt" column="Salt"/>
+        <property name="gender" column="Gender"/>
+        <property name="age" column="Age"/>
+        <property name="phoneNumber" column="PhoneNumber"/>
+        <property name="createTime" column="CreateTime"/>
+        <many-to-one name="departmentByDepartmentId" class="com.niit.model.Department" insert="false" update="false">
+            <column name="DepartmentId"/>
+        </many-to-one>
+        <set name="casesByDoctorId" inverse="true">
+            <key>
+                <column name="DoctorId"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.niit.model.Case"/>
+        </set>
+        <set name="registersByDoctorId" inverse="true">
+            <key>
+                <column name="DoctorId"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.niit.model.Register"/>
+        </set>
+    </class>
+</hibernate-mapping>

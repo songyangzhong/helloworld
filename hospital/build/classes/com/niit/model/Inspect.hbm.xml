@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.niit.model.Inspect" table="t_inspect" schema="hospital">
+        <id name="inspectId" column="InspectId"/>
+        <property name="inspectName" column="InspectName"/>
+        <property name="description" column="Description"/>
+        <property name="cost" column="Cost"/>
+        <property name="createTime" column="CreateTime"/>
+    </class>
+</hibernate-mapping>

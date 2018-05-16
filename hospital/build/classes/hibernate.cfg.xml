@@ -46,4 +46,5 @@
 		<mapping resource="com/niit/model/Register.hbm.xml" />
 		<mapping resource="com/niit/model/Ward.hbm.xml" />
 	</session-factory>
+	<!-- 提交 -->
 </hibernate-configuration>

@@ -40,7 +40,7 @@
 	<div class="logFoot">
 		<p class="p1">医院系统</p>
 		<p class="p2">联系方式：123456789</p>
-		<a href="/patient/login"></a>
+		<a href="/patient/login">病人登录</a>
 	</div>
 	<!-- 登录页面底部end -->
    

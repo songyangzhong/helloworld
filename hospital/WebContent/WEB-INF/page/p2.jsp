@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -39,44 +41,41 @@ dd.find("a").click(function(){dt.html($(this).html());_hide();});
 $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hide():"";});})})
 </script>
 <div class="form_boxC">
-<p>"<span class="f_cB">*</span>"号为必填项目</p>
 <table cellpadding="0" cellspacing="0">
 <tr>
-<th width="100">医生编号 <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL" style="width:100px;"><input name="" type="text" size="5" value="110"></div></td>
-</tr>
-<tr>
-<th width="100">科室编号 <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL" style="width:100px;"><input name="" type="text" size="5" value="110"></div></td>
- </tr>
-<tr>
-<th>医生姓名 <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL" style="width:100px;"><input name="" type="text" size="5" value="张三"></div></td>
-</tr>
-<tr>
-<th>性别 <span class="f_cB">*</span></th>
+<th width="100">预算部门</th>
 <td><!-- selectbox -->
 <div class="selectbox" style="width:230px;">
 <dl class="select">
 <dt>请选择</dt>
 <dd><ul>
-<li><a href="#"> 男 </a></li>
-<li><a href="#"> 女 </a></li>
+<li><a href="#">选项A</a></li>
+<li><a href="#">选项B</a></li>
+<li><a href="#">选项C</a></li>
+<li><a href="#">选项D</a></li>
+<li><a href="#">选项E</a></li>
 </ul></dd></dl>
 </div>
 <!-- /selectbox --></td>
 </tr>
 <tr>
- <th>年龄 <span class="f_cB">*</span></th>
- <td><div class="txtbox floatL" style="width:100px;"><input type="number"  min="1" max="150"size="5" ></div></td>
- </tr>
-<tr>
-<th>E-Mail <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL"><input name="" type="text" value="zhangsan@qq.com"></div></td>
-</tr>
-<tr>
-<th>备注</th>
-<td><div class="txtbox"><textarea name="" cols="25" rows="5"></textarea></div><p class="f_cB pdg_t5">最多500字</p></td>
+<th>年度</th>
+<td><!-- selectbox -->
+<div class="selectbox" style="width:230px;">
+<dl class="select">
+<dt>2016</dt>
+<dd><ul>
+<li><a href="#">2010</a></li>
+<li><a href="#">2011</a></li>
+<li><a href="#">2012</a></li>
+<li><a href="#">2013</a></li>
+<li><a href="#">2014</a></li>
+<li><a href="#">2015</a></li>
+<li><a href="#">2016</a></li>
+<li><a href="#">2017</a></li>
+</ul></dd></dl>
+</div>
+<!-- /selectbox --></td>
 </tr>
 </table>
 </div>

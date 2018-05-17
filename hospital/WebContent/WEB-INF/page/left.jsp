@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,7 +28,7 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks" href="keshiTab.html"
+						src="img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/keshiTab"
 						target="main">科室信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 			</dl>
@@ -38,12 +41,12 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks" href="ward.html"
+						src="img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/ward"
 						target="main">病床信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks" href="midicine.html"
+						src="img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/midicine"
 						target="main">药物信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 			</dl>
@@ -56,17 +59,17 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="patientTab.html" target="main"
+						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/patientTab" target="main"
 						class="cks">病人信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="case.html" target="main"
+						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/case" target="main"
 						class="cks">病例信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="inspect.html" target="main"
+						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/inspect" target="main"
 						class="cks">检查信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 			</dl>
@@ -79,7 +82,7 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="doctTab.html" target="main"
+						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/doctTab" target="main"
 						class="cks">医生信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 			</dl>
@@ -104,7 +107,7 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="changepwd.html"
+						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/changepwd"
 						target="main" class="cks">修改密码</a><img class="icon5"
 						src="img/coin21.png" />
 				</dd>

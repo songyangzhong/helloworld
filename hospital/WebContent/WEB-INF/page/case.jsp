@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,12 +27,13 @@
 <!-- MainForm -->
 <div id="MainForm">
 <div class="form_boxA">
-<h2>检查信息</h2>
+<h2>病例信息</h2>
 <table cellpadding="0" cellspacing="0">
 <tr>
-<th>检查编号</th>
-<th>检查项目名称</th>
-<th>描述</th>
+<th>病例编号</th>
+<th>病人编号</th>
+<th>医生编号</th>
+<th>病情描述</th>
 <th>创建时间</th>
 <th>操作</th>
 </tr>
@@ -39,11 +42,13 @@
 <td>销售部</td>
 <td>2017</td>
 <td>2017</td>
+<td>2017</td>
 <td><a href="#">查看</a> | <a href="#">操作</a></td>
 </tr>
 <tr>
 <td>2</td>
 <td>销售部</td>
+<td>2017</td>
 <td>2017</td>
 <td>2017</td>
 <td><a href="#">查看</a> | <a href="#">操作</a></td>

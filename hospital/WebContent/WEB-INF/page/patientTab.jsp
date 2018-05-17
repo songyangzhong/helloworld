@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,17 +27,18 @@
 <!-- MainForm -->
 <div id="MainForm">
 <div class="form_boxA">
-<h2>医生信息</h2>
+<h2>病人信息</h2>
 <table cellpadding="0" cellspacing="0">
 <tr>
-<th>医生编号</th>
-<th>科室编号</th>
+<th>病人编号</th>
 <th>姓名</th>
-<th>性别</th>
 <th>年龄</th>
+<th>性别</th>
+<th>病房编号</th>
+<th>饮食建议</th>
+<th>药物历史</th>
 <th>联系方式</th>
 <th>创建时间</th>
-<th>状态</th>
 <th>操作</th>
 </tr>
 <tr>
@@ -43,6 +46,7 @@
 <td>销售部</td>
 <td>2017</td>
 <td>张三</td>
+<td>12500.00</td>
 <td>12500.00</td>
 <td>12500.00</td>
 <td>12500.00</td>
@@ -57,6 +61,7 @@
 <td>12500.00</td>
 <td>12500.00</td>
 <td>12500.00</td>
+<td>12500.00</td>
 <td>审核通过</td>
 <td><a href="#">查看</a> | <a href="#">操作</a></td>
 </tr>
@@ -65,6 +70,7 @@
 <td>销售部</td>
 <td>2017</td>
 <td>张三</td>
+<td>12500.00</td>
 <td>12500.00</td>
 <td>12500.00</td>
 <td>12500.00</td>
@@ -79,6 +85,19 @@
 <td>12500.00</td>
 <td>12500.00</td>
 <td>12500.00</td>
+<td>12500.00</td>
+<td>审核通过</td>
+<td><a href="#">查看</a> | <a href="#">操作</a></td>
+</tr>
+<tr class="bgcA">
+<td>5</td>
+<td>销售部</td>
+<td>2017</td>
+<td>张三</td>
+<td>12500.00</td>
+<td>12500.00</td>
+<td>12500.00</td>
+<td>12500.00</td>
 <td>审核通过</td>
 <td><a href="#">查看</a> | <a href="#">操作</a></td>
 </tr>
@@ -86,7 +105,6 @@
 <p class="msg">共找到47条年度预算记录，当前显示从第1条至第10条</p>
 </div>
 </div>
-<!-- /MainForm -->
 <!-- /MainForm -->
 
 </body>

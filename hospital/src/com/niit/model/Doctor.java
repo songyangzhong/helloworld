@@ -18,7 +18,21 @@ public class Doctor {
     private Department departmentByDepartmentId;
     private Collection<Register> registersByDoctorId;
 
-    public int getDoctorId() {
+    
+    
+    public Doctor() {
+		super();
+	}
+    
+   
+	public Doctor(int doctorId) {
+		super();
+		this.doctorId = doctorId;
+	}
+
+
+
+	public int getDoctorId() {
         return doctorId;
     }
 

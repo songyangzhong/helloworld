@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,13 +27,13 @@
 <!-- MainForm -->
 <div id="MainForm">
 <div class="form_boxA">
-<h2>药物信息</h2>
+<h2>检查信息</h2>
 <table cellpadding="0" cellspacing="0">
 <tr>
-<th>药物编号</th>
-<th>药物名称</th>
-<th>常用计量</th>
+<th>检查编号</th>
+<th>检查项目名称</th>
 <th>描述</th>
+<th>创建时间</th>
 <th>操作</th>
 </tr>
 <tr>

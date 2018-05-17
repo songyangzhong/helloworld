@@ -37,7 +37,7 @@
 		<tx:attributes>
 			<tx:method name="save*" isolation="DEFAULT" propagation="REQUIRED"/>
 			<tx:method name="update*" isolation="DEFAULT" propagation="REQUIRED"/>
-			<tx:method name="delete*" isolation="DEFAULT" propagation="REQUIRED"/>
+			<tx:method name="delete*" isolation="DEFAULT" propagation="REQUIRED" read-only="false"/>
 			<tx:method name="find*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
 			<tx:method name="*" isolation="DEFAULT" propagation="REQUIRED"/>
 		</tx:attributes>

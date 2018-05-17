@@ -34,9 +34,10 @@ public class IndexController {
         return "login"; //该方法的执行最后跳转到index.jsp页面,所以给出该视图的名称
     }
     
-    @RequestMapping({"/patient/login"})
-    public String patient_login(){
-        return "/patient/login"; //该方法的执行最后跳转到index.jsp页面,所以给出该视图的名称
+    
+    @RequestMapping({"/doctTab"})
+    public String doctTab(){
+        return "doctTab"; //该方法的执行最后跳转到index.jsp页面,所以给出该视图的名称
     }
 
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE HTML>
 <html>
@@ -11,10 +12,10 @@
 <meta name="generator" content="" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<link href="css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print" />
-<link href="css/print.css" rel="stylesheet" type="text/css"  media="print" />
-<script src="js/jquery-1.10.1.min.js"></script>
-<script src="js/side.js" type="text/javascript"></script>
+<link href="${pageContext.request.contextPath}/css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print" />
+<link href="${pageContext.request.contextPath}/css/print.css" rel="stylesheet" type="text/css"  media="print" />
+<script src="${pageContext.request.contextPath}/js/jquery-1.10.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/side.js" type="text/javascript"></script>
 
 </head>
 
@@ -34,53 +35,22 @@
 <th>年龄</th>
 <th>联系方式</th>
 <th>创建时间</th>
-<th>状态</th>
 <th>操作</th>
 </tr>
+
+<c:forEach items="${list}" var="doctor">
 <tr>
-<td>1</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
+<td>${doctor.doctorId}</td>
+<td>${doctor.departmentId}</td>
+<td>${doctor.doctorName}</td>
+<td>${doctor.gender}</td>
+<td>${doctor.age}</td>
+<td>${doctor.phoneNumber}</td>
+<td>${doctor.createTime}</td>
+
+<td><a href="#">修改</a> | <a href="${pageContext.request.contextPath}/doctor/deleteDoctorById?id=${doctor.doctorId}">删除</a></td>
 </tr>
-<tr>
-<td>2</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
+</c:forEach>
 </table>
 <p class="msg">共找到47条年度预算记录，当前显示从第1条至第10条</p>
 </div>

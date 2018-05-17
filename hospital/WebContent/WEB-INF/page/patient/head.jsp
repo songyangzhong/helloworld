@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>头部</title>
-<link rel="stylesheet" type="text/css" href="css/public.css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/public.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/public.js"></script>
 </head>
 
 <body>

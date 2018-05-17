@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>首页左侧导航</title>
-<link rel="stylesheet" type="text/css" href="css/public.css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
+<link rel="${pageContext.request.contextPath}/stylesheet" type="text/css" href="css/public.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/public.js"></script>
 <head></head>
 
 <body id="bg">
@@ -15,74 +15,62 @@
 	<div class="container">
 
 		<div class="leftsidebar_box">
-			<a href="main.html" target="main"><div class="line">
-					<img src="img/coin01.png" />&nbsp;&nbsp;首页
+			<a href="${pageContext.request.contextPath}/patient/main" target="main"><div class="line">
+					<img src="${pageContext.request.contextPath}img/coin01.png" />&nbsp;&nbsp;首页
 				</div></a>
 			<dl class="system_log">
 				<dt>
-					<img class="icon1" src="img/coin07.png" /><img class="icon2"
-						src="img/coin08.png" /> 病人信息<img class="icon3"
-						src="img/coin19.png" /><img class="icon4"
-						src="img/coin20.png" />
+					<img class="icon1" src="${pageContext.request.contextPath}img/coin07.png" /><img class="icon2"
+						src="${pageContext.request.contextPath}img/coin08.png" /> 病人信息<img class="icon3"
+						src="${pageContext.request.contextPath}img/coin19.png" /><img class="icon4"
+						src="${pageContext.request.contextPath}img/coin20.png" />
 				</dt>
 				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="patientTab.html" target="main"
-						class="cks">病人信息</a><img class="icon5" src="img/coin21.png" />
+					<img class="coin11" src="${pageContext.request.contextPath}img/coin111.png" /><img class="coin22"
+						src="${pageContext.request.contextPath}img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/patientTab" target="main"
+						class="cks">病人信息</a><img class="icon5" src="${pageContext.request.contextPath}img/coin21.png" />
 				</dd>
 				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="case.html" target="main"
-						class="cks">病例信息</a><img class="icon5" src="img/coin21.png" />
+					<img class="coin11" src="${pageContext.request.contextPath}img/coin111.png" /><img class="coin22"
+						src="${pageContext.request.contextPath}img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/case" target="main"
+						class="cks">病例信息</a><img class="icon5" src="${pageContext.request.contextPath}img/coin21.png" />
 				</dd>
 				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="inspect.html" target="main"
-						class="cks">检查信息</a><img class="icon5" src="img/coin21.png" />
+					<img class="coin11" src="${pageContext.request.contextPath}img/coin111.png" /><img class="coin22"
+						src="${pageContext.request.contextPath}img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/inspect" target="main"
+						class="cks">检查信息</a><img class="icon5" src="${pageContext.request.contextPath}img/coin21.png" />
 				</dd>
 			</dl>
 			<dl class="system_log">
 				<dt>
-					<img class="icon1" src="img/coin10.png" /><img class="icon2"
-						src="img/coin09.png" /> 医生信息<img class="icon3"
-						src="img/coin19.png" /><img class="icon4"
-						src="img/coin20.png" />
+					<img class="icon1" src="${pageContext.request.contextPath}img/coin10.png" /><img class="icon2"
+						src="${pageContext.request.contextPath}img/coin09.png" /> 医生信息<img class="icon3"
+						src="${pageContext.request.contextPath}img/coin19.png" /><img class="icon4"
+						src="${pageContext.request.contextPath}img/coin20.png" />
 				</dt>
 				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="doctTab.html" target="main"
-						class="cks">医生信息</a><img class="icon5" src="img/coin21.png" />
+					<img class="coin11" src="${pageContext.request.contextPath}img/coin111.png" /><img class="coin22"
+						src="${pageContext.request.contextPath}img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/doctTab" target="main"
+						class="cks">医生信息</a><img class="icon5" src="${pageContext.request.contextPath}img/coin21.png" />
 				</dd>
 			</dl>
 			<dl class="system_log">
 				<dt>
-					<img class="icon1" src="img/coin11.png" /><img class="icon2"
-						src="img/coin12.png" /> 新闻管理<img class="icon3"
-						src="img/coin19.png" /><img class="icon4"
-						src="img/coin20.png" />
+					<img class="icon1" src="${pageContext.request.contextPath}img/coinL1.png" /><img class="icon2"
+						src="${pageContext.request.contextPath}img/coinL2.png" /> 系统管理<img class="icon3"
+						src="${pageContext.request.contextPath}img/coin19.png" /><img class="icon4"
+						src="${pageContext.request.contextPath}img/coin20.png" />
 				</dt>
 				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks">新闻管理</a><img class="icon5" src="img/coin21.png" />
-				</dd>
-			</dl>
-			<dl class="system_log">
-				<dt>
-					<img class="icon1" src="img/coinL1.png" /><img class="icon2"
-						src="img/coinL2.png" /> 系统管理<img class="icon3"
-						src="img/coin19.png" /><img class="icon4"
-						src="img/coin20.png" />
-				</dt>
-				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="changepwd.html"
+					<img class="coin11" src="${pageContext.request.contextPath}img/coin111.png" /><img class="coin22"
+						src="${pageContext.request.contextPath}img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/changepwd"
 						target="main" class="cks">修改密码</a><img class="icon5"
-						src="img/coin21.png" />
+						src="${pageContext.request.contextPath}img/coin21.png" />
 				</dd>
 				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks">退出</a><img
-						class="icon5" src="img/coin21.png" />
+					<img class="coin11" src="${pageContext.request.contextPath}img/coin111.png" /><img class="coin22"
+						src="${pageContext.request.contextPath}img/coin222.png" /><a class="cks">退出</a><img
+						class="icon5" src="${pageContext.request.contextPath}img/coin21.png" />
 				</dd>
 			</dl>
 

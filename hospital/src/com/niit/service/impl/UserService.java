@@ -12,24 +12,22 @@ import com.niit.service.IUserService;
 
 @Service
 public class UserService implements IUserService {
-	
+
 	@Resource
 	private IUserDao userDao;
-	
+
 	public void setuserDao(IUserDao userDao) {
 		this.userDao = userDao;
 	}
+
 	@Override
 	public void save(UserTest u) {
 		userDao.save(u);
 	}
+
 	@Override
 	public void update(UserTest u) {
 		userDao.update(u);
-	}
-	@Override
-	public void delete(Integer id) {
-		userDao.delete(id);
 	}
 
 	@Override
@@ -43,4 +41,3 @@ public class UserService implements IUserService {
 	}
 
 }
-

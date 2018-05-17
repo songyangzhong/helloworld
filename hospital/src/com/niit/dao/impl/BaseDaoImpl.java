@@ -1,12 +1,19 @@
 package com.niit.dao.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import com.niit.dao.BaseDao;
+import com.niit.util.GenericSuperClass;
 
 public class BaseDaoImpl<T> implements BaseDao<T> {
+	
+	//范型转换
+	@SuppressWarnings("unchecked")
+	private Class entity = (Class)GenericSuperClass.getClass(this.getClass());
 	
 	@Resource
 	private HibernateTemplate ht;
@@ -31,5 +38,22 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     public void saveOrUpdate(T entity) {
         ht.saveOrUpdate(entity);
     }
+
+	@Override
+	public T findById(int id) {
+		return (T)ht.get(entity, id);
+	}
+
+	@Override
+	public List<T> findAll() {
+		//entity.toString的打印结果是  class com.niit.model.Ward
+		String entityname  = entity.toString();
+		String[] strings = entityname.split(" ");
+		//获得com.niit.model.Ward
+		String classname = strings[1];
+		
+		return (List<T>) ht.find("from " + classname);
+		
+	}
 
 }

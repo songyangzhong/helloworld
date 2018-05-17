@@ -1,6 +1,7 @@
 package com.niit.test;
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -9,34 +10,53 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.niit.model.UserTest;
 import com.niit.model.Ward;
-import com.niit.service.IUserService;
 import com.niit.service.impl.WardService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({ "classpath:applicationContext.xml" })
 public class Demo {
 
-	@Resource(name = "userService")
-	private IUserService userService;
 	@Resource(name = "wardService")
 	private WardService wardService;
 
 	@Test
-	public void test3() {
-		UserTest u = new UserTest();
-		u.setName("test-name");
-		u.setGender("test-gender");
-		userService.save(u);
-	}
-	
-	@Test
-	public void test() { 
+	public void testSave() { 
 		Ward ward = new Ward();
 		Date date = new Date(System.currentTimeMillis());
 		ward.setCreateTime(date);
 		wardService.save(ward);
 	}
-
+	
+	@Test
+	public void testfindById() { 
+		System.out.println(wardService.findById(5).getCreateTime());
+	}
+	
+	@Test 
+	public void testfindAll() {
+		List<Ward> wards = wardService.findAll();
+		for(int i=0;i<wards.size();i++) {
+			System.out.println(wards.get(i).getWardId());
+		}
+	}
+	
+	@Test 
+	public void testdelete() {
+		Ward ward = new Ward();
+		ward.setWardId(6);
+		wardService.delete(ward);
+	}
+	
+	@Test 
+	public void testupdate() {
+		Ward ward = new Ward();
+		ward.setWardId(5);
+		Date date = new Date(System.currentTimeMillis());
+		ward.setCreateTime(date);
+		wardService.update(ward);
+	}
+	
+	
+	
 }

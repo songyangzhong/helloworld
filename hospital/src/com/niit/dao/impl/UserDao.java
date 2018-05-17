@@ -1,6 +1,5 @@
 package com.niit.dao.impl;
 
-
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -13,31 +12,28 @@ import com.niit.model.UserTest;
 
 @Repository
 public class UserDao implements IUserDao {
+	
 	@Resource
 	private HibernateTemplate ht;
-	public void setHt(HibernateTemplate ht) {
-		this.ht = ht;
-	}
+
 	@Override
 	public void save(UserTest u) {
 		ht.save(u);
 	}
+
 	@Override
 	public void update(UserTest u) {
 		ht.update(u);
 	}
-	@Override
-	public void delete(Integer id) {
-		ht.delete(findById(id));
-	}
+
 	@Override
 	public List<UserTest> findAll() {
 		return ht.loadAll(UserTest.class);
 	}
+
 	@Override
 	public UserTest findById(Integer id) {
 		return ht.get(UserTest.class, id);
 	}
 
 }
-

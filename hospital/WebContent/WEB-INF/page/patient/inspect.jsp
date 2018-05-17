@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,17 +27,12 @@
 <!-- MainForm -->
 <div id="MainForm">
 <div class="form_boxA">
-<h2>病人信息</h2>
+<h2>检查信息</h2>
 <table cellpadding="0" cellspacing="0">
 <tr>
-<th>病人编号</th>
-<th>姓名</th>
-<th>年龄</th>
-<th>性别</th>
-<th>病房编号</th>
-<th>饮食建议</th>
-<th>药物历史</th>
-<th>联系方式</th>
+<th>检查编号</th>
+<th>检查项目名称</th>
+<th>描述</th>
 <th>创建时间</th>
 <th>操作</th>
 </tr>
@@ -43,60 +40,14 @@
 <td>1</td>
 <td>销售部</td>
 <td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
+<td>2017</td>
 <td><a href="#">查看</a> | <a href="#">操作</a></td>
 </tr>
 <tr>
 <td>2</td>
 <td>销售部</td>
 <td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td>销售部</td>
 <td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-<tr class="bgcA">
-<td>5</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
 <td><a href="#">查看</a> | <a href="#">操作</a></td>
 </tr>
 </table>

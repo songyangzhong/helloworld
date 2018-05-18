@@ -6,6 +6,6 @@ import com.niit.dao.IDoctorDao;
 import com.niit.model.Doctor;
 
 @Repository
-public class IDoctorDaoImpl extends BaseDaoImpl<Doctor> implements IDoctorDao{
+public class DoctorDaoImpl extends BaseDaoImpl<Doctor> implements IDoctorDao{
 
 }

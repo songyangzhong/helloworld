@@ -44,7 +44,7 @@ public class Demo {
 	@Test 
 	public void testdelete() {
 		Ward ward = new Ward();
-		ward.setWardId(6);
+		ward.setWardId(4);
 		wardService.delete(ward);
 	}
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -35,68 +36,24 @@
 <th>药物历史</th>
 <th>联系方式</th>
 <th>创建时间</th>
-<th>操作</th>
 </tr>
+
+<c:forEach items="${patients}" var="patient">
 <tr>
-<td>1</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
+<td>${patient.patientId}</td>
+<td>${patient.patientName}</td>
+<td>${patient.age}</td>
+<td>${patient.gender}</td>
+<td>${patient.wardId}</td>
+<td>${patient.dietAdvice}</td>
+<td>${patient.medicineHistory}</td>
+<td>${patient.phoneNumber}</td>
+<td>${patient.createTime}</td>
+
+<td><a href="#">修改</a> | <a href="${pageContext.request.contextPath}/patient/deleteById?patientId=${patient.patientId}">删除</a></td>
 </tr>
-<tr>
-<td>2</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-<tr class="bgcA">
-<td>5</td>
-<td>销售部</td>
-<td>2017</td>
-<td>张三</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>12500.00</td>
-<td>审核通过</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
+</c:forEach>
+
 </table>
 <p class="msg">共找到47条年度预算记录，当前显示从第1条至第10条</p>
 </div>

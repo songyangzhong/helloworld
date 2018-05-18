@@ -14,10 +14,10 @@
 	<!-- 头部 -->
 	<div class="head">
 		<div class="headL">
-			<img class="headLogo" src="img/logLOGO.png"/>
+			<img class="headLogo" src="${pageContext.request.contextPath}/img/logLOGO.png"/>
 		</div>
 		<div class="headR">
-			<span style="color:#FFF">欢迎：admin</span> <a href="head2.html" rel="external">【退出】</a>
+			<span style="color:#FFF">欢迎：admin</span> <a href="${pageContext.request.contextPath}/head2.html" rel="external">【退出】</a>
 		</div>
 	</div>
 </body>

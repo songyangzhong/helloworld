@@ -12,7 +12,7 @@
 	<div id="pageAll">
 		<div class="pageTop">
 			<div class="page">
-				<img src="img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
+				<img src="${pageContext.request.contextPath}img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
 					href="#">公共管理</a>&nbsp;-</span>&nbsp;修改密码
 			</div>
 		</div>
@@ -25,17 +25,17 @@
 				<div class="bbD">
 					&nbsp;&nbsp;&nbsp;&nbsp;输入旧密码：<input type="password" class="input3"
 						onblur="checkpwd1()" id="pwd1" /> <img class="imga"
-						src="img/ok.png" /><img class="imgb" src="img/no.png" />
+						src="${pageContext.request.contextPath}img/ok.png" /><img class="imgb" src="${pageContext.request.contextPath}img/no.png" />
 				</div>
 				<div class="bbD">
 					&nbsp;&nbsp;&nbsp;&nbsp;输入新密码：<input type="password" class="input3"
 						onblur="checkpwd2()" id="pwd2" /> <img class="imga"
-						src="img/ok.png" /><img class="imgb" src="img/no.png" />
+						src="${pageContext.request.contextPath}img/ok.png" /><img class="imgb" src="${pageContext.request.contextPath}img/no.png" />
 				</div>
 				<div class="bbD">
 					再次确认密码：<input type="password" class="input3" onblur="checkpwd3()"
-						id="pwd3" /> <img class="imga" src="img/ok.png" /><img
-						class="imgb" src="img/no.png" />
+						id="pwd3" /> <img class="imga" src="${pageContext.request.contextPath}img/ok.png" /><img
+						class="imgb" src="${pageContext.request.contextPath}img/no.png" />
 				</div>
 				<div class="bbD">
 					<p class="bbDP">

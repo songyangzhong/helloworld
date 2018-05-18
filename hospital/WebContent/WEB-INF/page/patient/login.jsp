@@ -30,7 +30,7 @@
 					placeholder="输入用户密码" />
 			</div>
 			<div class="logC">
-				<a href="index.html" target="_self"><button>登 录</button></a>
+				<a href="${pageContext.request.contextPath}index" target="_self"><button>登 录</button></a>
 			</div>
 		</div>
 	</div>

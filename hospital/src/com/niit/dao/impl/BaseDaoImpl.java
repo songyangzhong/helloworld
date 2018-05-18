@@ -16,9 +16,9 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	private Class entity = (Class)GenericSuperClass.getClass(this.getClass());
 	
 	@Resource
-	private HibernateTemplate ht;
+	protected HibernateTemplate ht;
 
-    @Override
+	@Override
     public void save(T entity) {
         ht.save(entity);
     }
@@ -43,17 +43,19 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	public T findById(int id) {
 		return (T)ht.get(entity, id);
 	}
-
-	@Override
-	public List<T> findAll() {
+	
+	public String getClassName() {
 		//entity.toString的打印结果是  class com.niit.model.Ward
 		String entityname  = entity.toString();
 		String[] strings = entityname.split(" ");
 		//获得com.niit.model.Ward
 		String classname = strings[1];
-		
-		return (List<T>) ht.find("from " + classname);
-		
+		return classname;
+	}
+
+	@Override
+	public List<T> findAll() {
+		return (List<T>) ht.find("from " + getClassName());
 	}
 
 }

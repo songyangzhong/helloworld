@@ -3,6 +3,7 @@ package com.niit.web.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +20,17 @@ public class PatientController {
 	@Resource
 	private IPatientService patientService;
 	
-	@RequestMapping("findAll")
-    public ModelAndView findAll(){
+	@RequestMapping("findPatientByPatientId")
+    public ModelAndView findPatientByPatientId(HttpServletRequest request){
+		//-----
+		//从Session中获取patient
+		//request.getSession().getAttribute("patient");
+		int patientId = 1;
+		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("patient/patientTab");
-		List<Patient> patients = patientService.findAll();
-		System.out.println(patients.get(0).getPatientName());
-		mv.addObject("patients", patients);
+		Patient patient = patientService.findById(patientId);
+		mv.addObject("patient", patient);
         return mv; 
     }
 	

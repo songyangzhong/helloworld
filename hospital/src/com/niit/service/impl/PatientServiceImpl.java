@@ -48,4 +48,9 @@ public class PatientServiceImpl implements IPatientService{
 		patientDao.update(patient);
 	}
 
+	@Override
+	public Patient findById(int patientId) {
+		return patientDao.findById(patientId);
+	}
+
 }

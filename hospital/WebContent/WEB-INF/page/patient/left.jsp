@@ -27,12 +27,12 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="${pageContext.request.contextPath}/img/coin111.png" /><img class="coin22"
-						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/findAll" target="main"
+						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/findPatientByPatientId" target="main"
 						class="cks">病人信息</a><img class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="${pageContext.request.contextPath}/img/coin111.png" /><img class="coin22"
-						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/case" target="main"
+						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/case/findByPatientId" target="main"
 						class="cks">病例信息</a><img class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
 				</dd>
 				<dd>

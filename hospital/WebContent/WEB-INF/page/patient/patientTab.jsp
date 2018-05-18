@@ -38,7 +38,6 @@
 <th>创建时间</th>
 </tr>
 
-<c:forEach items="${patients}" var="patient">
 <tr>
 <td>${patient.patientId}</td>
 <td>${patient.patientName}</td>
@@ -52,10 +51,8 @@
 
 <td><a href="#">修改</a> | <a href="${pageContext.request.contextPath}/patient/deleteById?patientId=${patient.patientId}">删除</a></td>
 </tr>
-</c:forEach>
 
 </table>
-<p class="msg">共找到47条年度预算记录，当前显示从第1条至第10条</p>
 </div>
 </div>
 <!-- /MainForm -->

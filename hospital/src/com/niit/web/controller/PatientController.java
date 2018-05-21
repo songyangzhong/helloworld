@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.niit.model.Patient;
 import com.niit.service.IPatientService;
 import com.niit.service.impl.PatientServiceImpl;
+import com.niit.web.form.PatientForm;
 
 @Controller
 @RequestMapping("patient")
@@ -29,8 +30,8 @@ public class PatientController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("patient/patientTab");
-		Patient patient = patientService.findById(patientId);
-		mv.addObject("patient", patient);
+		PatientForm patientForm = patientService.findById(patientId);
+		mv.addObject("patientForm", patientForm);
         return mv; 
     }
 	
@@ -39,4 +40,33 @@ public class PatientController {
 		patientService.deleteById(patientId);
         return "redirect:findAll"; 
     }
+	
+	@RequestMapping("beforeUpdate")
+    public ModelAndView beforeUpate(HttpServletRequest request){
+		//---------
+		//从Session中获取patient
+		//request.getSession().getAttribute("patient");
+		int patientId = 1;
+		
+		PatientForm patientForm = patientService.findById(patientId);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("patientForm",patientForm);
+		mv.setViewName("patient/patientUpdate");
+        return mv; 
+    }
+	
+	@RequestMapping("patientUpdate")
+    public String patientUpdate(HttpServletRequest request,PatientForm patientForm){
+		//---------
+		//从Session中获取patient
+		//request.getSession().getAttribute("patient");
+		int patientId = 1;
+		
+		patientService.update(patientForm);
+		
+        return "redirect:patient/findPatientByPatientId"; 
+    }
+	
+	
 }

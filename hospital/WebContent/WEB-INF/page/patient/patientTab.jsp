@@ -39,17 +39,18 @@
 </tr>
 
 <tr>
-<td>${patient.patientId}</td>
-<td>${patient.patientName}</td>
-<td>${patient.age}</td>
-<td>${patient.gender}</td>
-<td>${patient.wardId}</td>
-<td>${patient.dietAdvice}</td>
-<td>${patient.medicineHistory}</td>
-<td>${patient.phoneNumber}</td>
-<td>${patient.createTime}</td>
+<td>${patientForm.patientId}</td>
+<td>${patientForm.patientName}</td>
+<td>${patientForm.age}</td>
+<td>${patientForm.gender}</td>
+<td>${patientForm.wardId}</td>
+<td>${patientForm.dietAdvice}</td>
+<td>${patientForm.medicineHistory}</td>
+<td>${patientForm.phoneNumber}</td>
+<td>${patientForm.createTime}</td>
 
-<td><a href="#">修改</a> | <a href="${pageContext.request.contextPath}/patient/deleteById?patientId=${patient.patientId}">删除</a></td>
+<td><a href="${pageContext.request.contextPath}/patient/beforeUpdate?patientId=${patientForm.patientId}">修改</a> |
+	 <a href="${pageContext.request.contextPath}/patient/deleteById?patientId=${patientForm.patientId}">删除</a></td>
 </tr>
 
 </table>

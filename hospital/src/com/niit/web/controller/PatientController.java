@@ -1,5 +1,6 @@
 package com.niit.web.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -63,9 +64,11 @@ public class PatientController {
 		//request.getSession().getAttribute("patient");
 		int patientId = 1;
 		
+		Date createTime = new Date(System.currentTimeMillis());
+		patientForm.setCreateTime(createTime);
 		patientService.update(patientForm);
 		
-        return "redirect:patient/findPatientByPatientId"; 
+        return "redirect:/patient/findPatientByPatientId"; 
     }
 	
 	@RequestMapping("patientRegister")

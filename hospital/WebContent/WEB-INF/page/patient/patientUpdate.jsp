@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title></title>
+<title>病人信息修改页面</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="generator" content="" />
@@ -67,7 +67,8 @@
 									})
 						})
 			</script>
-			<form action="${pageContext.request.contextPath}/patient/patientUpdate">
+			<form action="${pageContext.request.contextPath}/patient/patientUpdate" method="post">
+			<input type="hidden" name="salt" value="${patientForm.salt}"/>
 			<div class="form_boxC">
 				<p>
 					"<span class="f_cB">*</span>"号为必填项目
@@ -87,8 +88,8 @@
 					</tr>
 					<tr>
 						<th>性别 <span class="f_cB">*</span></th>
-						<td>
-							<!-- selectbox -->
+						<!-- <td>
+							selectbox
 							<div class="selectbox" style="width: 230px;">
 								<dl class="select">
 									<dt>请选择</dt>
@@ -100,7 +101,26 @@
 									</dd>
 								</dl>
 							</div> 
-							<!-- /selectbox -->
+							/selectbox
+						</td> -->
+						<td>
+							<select name="gender">
+							<div class="selectbox" style="width: 230px;">
+								<dl class="select">
+									<dt>请选择</dt>
+									<dd>
+										<ul>
+											<option value="男" >男</option>
+											<option value="女" >女</option>
+											<%-- <c:if test="${patientForm.gender}!='男'}"><option value="男">男</option></c:if>
+                                			<c:if test="${patientForm.gender}=='男'"><option value="男" selected>男</option></c:if>
+											<c:if test="${patientForm.gender}!='女'"><option value="女">女</option></c:if>
+                                			<c:if test="${patientForm.gender}=='女'"><option value="女" selected>女</option></c:if> --%>
+										</ul>
+									</dd>
+								</dl>
+							</div> 
+							</select>
 						</td>
 					</tr>
 					<tr>
@@ -112,7 +132,7 @@
 					<tr>
 						<th>密码<span class="f_cB">*</span></th>
 						<td><div class="txtbox floatL">
-								<input name="password" type="text" value="${patientForm.password}"/>
+								<input name="password" type="password" value="${patientForm.password}"/>
 							</div></td>
 					</tr>
 					<tr>
@@ -146,7 +166,7 @@
 		</div>
 		<!-- SubPopup -->
 
-		<div id="BtmBtn">
+		<!-- <div id="BtmBtn">
 			<div class="btn_boxB floatR mag_l20">
 				<input name="" type="button" value="取消"
 					onmousemove="this.className='input_move'"
@@ -157,10 +177,14 @@
 					onmousemove="this.className='input_move'"
 					onmouseout="this.className='input_out'">
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<!-- /Popup -->
-	<input type="submit" value="submit"/>
+	<div id="BtmBtn">
+		<div class="btn_box floatR">
+			<input type="submit" value="提交"/>
+		</div>
+	</div>
 	</form>
 </body>
 </html>

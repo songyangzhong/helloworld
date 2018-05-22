@@ -18,6 +18,15 @@ public class PatientForm {
 	private String medicineHistory;
 	private String phoneNumber;
 	private Date createTime;
+	private String salt;
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
 
 	public int getPatientId() {
 		return patientId;

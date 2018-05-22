@@ -57,6 +57,7 @@ public class PatientServiceImpl implements IPatientService{
 	public PatientForm patientVoTopatientDTO(Patient patient) {
 		PatientForm patientForm = new PatientForm();
 		patientForm.setAge(patient.getAge());
+		patientForm.setSalt(patient.getSalt());
 		patientForm.setCreateTime(patient.getCreateTime());
 		patientForm.setDietAdvice(patient.getDietAdvice());
 		patientForm.setGender(patient.getGender());
@@ -72,6 +73,7 @@ public class PatientServiceImpl implements IPatientService{
 	public Patient patientDTOTopatientVO(PatientForm patientForm) {
 		Patient patient = new Patient();
 		patient.setAge(patientForm.getAge());
+		patient.setSalt(patientForm.getSalt());
 		patient.setCreateTime(patientForm.getCreateTime());
 		patient.setDietAdvice(patientForm.getDietAdvice());
 		patient.setGender(patientForm.getGender());

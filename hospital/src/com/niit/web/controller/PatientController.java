@@ -68,5 +68,10 @@ public class PatientController {
         return "redirect:patient/findPatientByPatientId"; 
     }
 	
+	@RequestMapping("patientRegister")
+    public String patientRegister(){
+        return "patient/register"; 
+    }
+	
 	
 }

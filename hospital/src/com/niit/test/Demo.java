@@ -14,7 +14,7 @@ import com.niit.model.Ward;
 import com.niit.service.impl.WardService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath:applicationContext.xml" })
+@ContextConfiguration({ "classpath:applicationContext-dao.xml" })
 public class Demo {
 
 	@Resource(name = "wardService")
@@ -51,12 +51,10 @@ public class Demo {
 	@Test 
 	public void testupdate() {
 		Ward ward = new Ward();
-		ward.setWardId(5);
+		ward.setWardId(1);
 		Date date = new Date(System.currentTimeMillis());
 		ward.setCreateTime(date);
 		wardService.update(ward);
 	}
-	
-	
 	
 }

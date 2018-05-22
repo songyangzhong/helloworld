@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+">
+    <!-- 1：开启包扫描 -->
+    <context:component-scan base-package="com.niit"></context:component-scan>
+    
+    <!-- 2:开启mvc驱动 -->
+    <mvc:annotation-driven />
+ 
+     
+    <!--  3:视图解析器    -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+            id="internalResourceViewResolver">
+        <!-- 前缀 -->
+        <property name="prefix" value="/WEB-INF/page/" />
+        <!-- 后缀 -->
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+	 <!--mvc名称空间下的resources标记用于为静态资源指定处理方式-->
+    <!--也就是用于配置需要放过对哪些静态资源的访问-->
+    <!--location用于指定静态资源的位置-->
+    <!--mapping:指定访问静态资源的路径,带css或js或images的请求放过-->
+    
+    
+    <!-- 4:静态资源 -->
+    <mvc:resources mapping="/css/**" location="/css/" />
+    <mvc:resources mapping="/js/**" location="/js/" />
+    <mvc:resources mapping="/img/**" location="/img/" />
+    
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+          <property name="defaultEncoding" value="utf-8" />  
+          <property name="maxUploadSize" value="1024000" />  
+          <property name="maxInMemorySize" value="40960" />  
+    </bean> 
+    
+    
+   
+    <!--1：SessionFactory对象 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+	</bean>
+	
+	
+	<!--2： HibernateTemplate对象 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	
+	<!-- 添加事务管理配置 -->
+	<!-- 13.创建平台事务管理器 -->
+	<bean id="transactionManager"
+	     class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- 4.创建事务通知 -->
+	<tx:advice id="txAdivce" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" isolation="DEFAULT" propagation="REQUIRED" />
+			<tx:method name="update*" isolation="DEFAULT" propagation="REQUIRED"/>
+			<tx:method name="delete*" isolation="DEFAULT" propagation="REQUIRED" />
+			<tx:method name="find*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
+			<tx:method name="*" isolation="DEFAULT" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 5.创建事务切面 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* com.niit.service.impl.*.*(..))" id="myPt"/>
+		<aop:advisor advice-ref="txAdivce" pointcut-ref="myPt"/>
+	</aop:config>
+
+</beans>

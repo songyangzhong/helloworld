@@ -2,12 +2,11 @@ package com.niit.service;
 
 import java.util.List;
 
-import com.niit.model.Doctor;
 import com.niit.model.Patient;
 import com.niit.web.form.PatientForm;
 
 public interface IPatientService {
-	public void save(Patient patient);
+	public int save(PatientForm patientForm);
     public Patient findDoctorById(Integer doctorId);
     public List<Patient> findAll();
     public PatientForm findById(int patientId);

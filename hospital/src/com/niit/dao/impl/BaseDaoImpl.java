@@ -19,8 +19,8 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	protected HibernateTemplate ht;
 
 	@Override
-    public void save(T entity) {
-        ht.save(entity);
+    public int save(T entity) {
+        return (int)ht.save(entity);
     }
 
     @Override

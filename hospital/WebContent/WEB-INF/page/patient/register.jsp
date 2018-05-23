@@ -1,146 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE HTML>
-<html>
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>病人注册</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta name="generator" content="" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport"
-	content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/public.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page.css" />
 <link href="${pageContext.request.contextPath}/css/haiersoft.css" rel="stylesheet" type="text/css"
 	media="screen,print" />
 <link href="${pageContext.request.contextPath}/css/print.css" rel="stylesheet" type="text/css"
 	media="print" />
-<script src="${pageContext.request.contextPath}/js/jquery-1.10.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/side.js" type="text/javascript"></script>
-
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-<![endif]-->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/public.js"></script>
 </head>
-
 <body>
-	<!-- Popup -->
-	<div id="Popup">
 
-		<!-- SubPopup -->
-		<div id="SubPopup">
-			<script type="text/javascript">
-				$(
-						function() {
-							$(".select").each(
-									function() {
-										var s = $(this);
-										var z = parseInt(s.css("z-index"));
-										var dt = $(this).children("dt");
-										var dd = $(this).children("dd");
-										var _show = function() {
-											dd.slideDown(200);
-											dt.addClass("cur");
-											s.css("z-index", z + 1);
-										};
-										var _hide = function() {
-											dd.slideUp(200);
-											dt.removeClass("cur");
-											s.css("z-index", z);
-										};
-										dt.click(function() {
-											dd.is(":hidden") ? _show()
-													: _hide();
-										});
-										dd.find("a").click(function() {
-											dt.html($(this).html());
-											_hide();
-										});
-										$("body").click(
-												function(i) {
-													!$(i.target).parents(
-															".select").first()
-															.is(s) ? _hide()
-															: "";
-												});
-									})
-						})
-			</script>
-			<form action="${pageContext.request.contextPath}/patient/patientUpdate">
-			<div class="form_boxC">
-				<p>
-					"<span class="f_cB">*</span>"号为必填项目
-				</p>
-				<table cellpadding="0" cellspacing="0">
-					<tr>
-						<th width="100">病人编号 <span class="f_cB">*</span></th>
-						<td><div class="txtbox floatL" style="width: 100px;">
-								<input name="patientId" type="text" size="5" value="${patientForm.patientId}" onchange="false"/>
-							</div></td>
-					</tr>
-					<tr>
-						<th>病人姓名<span class="f_cB">*</span></th>
-						<td><div class="txtbox floatL" style="width: 100px;">
-								<input name="patientName" type="text" size="5" value="${patientForm.patientName}"/>
-							</div></td>
-					</tr>
-					<tr>
-						<th>性别 <span class="f_cB">*</span></th>
-						<td>
-							<!-- selectbox -->
-							<div class="selectbox" style="width: 230px;">
-								<dl class="select">
-									<dt>请选择</dt>
-									<dd>
-										<ul>
-											<li><a href="#"> 男 </a></li>
-											<li><a href="#"> 女 </a></li>
-										</ul>
-									</dd>
-								</dl>
-							</div> 
-							<!-- /selectbox -->
-						</td>
-					</tr>
-					<tr>
-						<th>年龄 <span class="f_cB">*</span></th>
-						<td><div class="txtbox floatL" style="width: 100px;">
-								<input type="number" min="1" max="150" size="5" name="age" value="${patientForm.age}"/>
-							</div></td>
-					</tr>
-					<tr>
-						<th>密码<span class="f_cB">*</span></th>
-						<td><div class="txtbox floatL">
-								<input name="password" type="text" value="${patientForm.password}"/>
-							</div></td>
-					</tr>
-					<tr>
-						<th>联系方式<span class="f_cB">*</span></th>
-						<td><div class="txtbox floatL">
-								<input name="phoneNumber" type="text" value="${patientForm.phoneNumber}"/>
-							</div></td>
-					</tr>
-				</table>
+	<!-- 登录body -->
+	<div class="logDiv">
+		<img class="logBanner" src="${pageContext.request.contextPath}/img/logBanner.png" />
+		<div class="logGet">
+			<!-- 头部提示信息 -->
+			<div class="logD logDtip">
+				<p class="p1">注册</p>
 			</div>
-		</div>
-		<!-- SubPopup -->
-
-		<div id="BtmBtn">
-			<div class="btn_boxB floatR mag_l20">
-				<input name="" type="button" value="取消"
-					onmousemove="this.className='input_move'"
-					onmouseout="this.className='input_out'">
+			<!-- 输入框 -->
+			<form action="${pageContext.request.contextPath}/patient/register" method="post">
+			<div class="lgD">
+				<img class="img1" src="${pageContext.request.contextPath}/img/logName.png" /><input type="text"
+					placeholder="输入用户名" name="patientName"/>
 			</div>
-			<div class="btn_box floatR">
-				<input name="" type="button" value="提交"
-					onmousemove="this.className='input_move'"
-					onmouseout="this.className='input_out'">
+			<div class="lgD">
+				<img class="img1" src="${pageContext.request.contextPath}/img/logPwd.png" /><input type="password"
+					placeholder="输入用户密码" name="password"/>
 			</div>
+			<div class="lgD">
+				<img class="img1" src="${pageContext.request.contextPath}/img/logPwd.png" /><input type="number"
+					placeholder="输入用户年龄" name="age" />
+			</div>
+			<div class="lgD">
+				<select name="gender">
+					<option value="男" >男</option>
+					<option value="女" >女</option>
+				</select>
+			</div>
+			<div class="lgD">
+				<img class="img1" src="${pageContext.request.contextPath}/img/logPwd.png" /><input type="text"
+					placeholder="输入用户联系方式" name="PhoneNumber"/>
+			</div>
+			<div class="logC">
+				<%-- <a href="${pageContext.request.contextPath}index" target="_self"><button>登 录</button></a> --%>
+				<div class="btn_box floatR"><input type="submit" value="注册"/></div>
+			</div>
+			</form>
 		</div>
 	</div>
-	<!-- /Popup -->
-	<input type="submit" value="submit"/>
-	</form>
+	<!-- 登录body  end -->
+
 </body>
 </html>

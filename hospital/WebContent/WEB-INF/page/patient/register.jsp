@@ -25,7 +25,7 @@
 				<p class="p1">注册</p>
 			</div>
 			<!-- 输入框 -->
-			<form action="${pageContext.request.contextPath}/patient/register" method="post">
+			<form action="${pageContext.request.contextPath}/patient/patientRegister" method="post">
 			<div class="lgD">
 				<img class="img1" src="${pageContext.request.contextPath}/img/logName.png" /><input type="text"
 					placeholder="输入用户名" name="patientName"/>

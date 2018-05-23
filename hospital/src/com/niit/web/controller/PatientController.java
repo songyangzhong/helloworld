@@ -72,11 +72,6 @@ public class PatientController {
     }
 	
 	@RequestMapping("patientRegister")
-    public String patientRegister(){
-        return "/patient/register"; 
-    }
-	
-	@RequestMapping("register")
     public String register(PatientForm patientForm,HttpServletRequest request){
 		Date createTime = new Date(System.currentTimeMillis());
 		patientForm.setCreateTime(createTime);
@@ -88,8 +83,10 @@ public class PatientController {
     }
 	
 	@RequestMapping("patientLogin")
-    public String patientLogin(){
-        return "/patient/login"; 
+    public String login(PatientForm patientForm,HttpServletRequest request){
+		request.getSession().setAttribute("patientForm", patientForm);
+        return "redirect:/patient/index"; 
     }
+	
 	
 }

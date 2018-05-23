@@ -30,7 +30,12 @@ public class PatientMenuController {
 
     @RequestMapping("patient/login")
     public String login(){
-        return "patient/login"; 
+        return "patient/login";
+    }
+    
+    @RequestMapping("patient/register")
+    public String register(){
+        return "patient/register";
     }
     
 }

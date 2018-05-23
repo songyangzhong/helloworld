@@ -16,7 +16,7 @@
         <property name="medicineHistory" column="MedicineHistory"/>
         <property name="phoneNumber" column="PhoneNumber"/>
         <property name="createTime" column="CreateTime"/>
-        <one-to-one name="WardByWardId" constrained="true" ></one-to-one>
+        <one-to-one name="WardByWardId" constrained="false" ></one-to-one>
         <set name="casesByPatientId" inverse="true">
             <key>
                 <column name="PatientId"/>

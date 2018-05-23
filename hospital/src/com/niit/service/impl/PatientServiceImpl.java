@@ -87,4 +87,14 @@ public class PatientServiceImpl implements IPatientService{
 		return patient;
 	}
 
+	@Override
+	public PatientForm login(PatientForm patientForm) {
+		Patient patient = patientDao.login(patientForm);
+		if(patient!=null) {
+			return this.patientVoTopatientDTO(patient);
+		}else {
+			return null;
+		}
+	}
+
 }

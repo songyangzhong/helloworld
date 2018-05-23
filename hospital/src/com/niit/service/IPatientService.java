@@ -13,5 +13,6 @@ public interface IPatientService {
     public void deleteById(int patientId);
     public void delete(Patient patient);
     public void update(PatientForm patientForm);
+	public PatientForm login(PatientForm patientForm);
     
 }

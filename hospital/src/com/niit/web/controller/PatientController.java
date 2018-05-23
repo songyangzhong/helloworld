@@ -83,9 +83,19 @@ public class PatientController {
     }
 	
 	@RequestMapping("patientLogin")
-    public String login(PatientForm patientForm,HttpServletRequest request){
-		request.getSession().setAttribute("patientForm", patientForm);
-        return "redirect:/patient/index"; 
+    public ModelAndView login(PatientForm patientForm,HttpServletRequest request){
+		ModelAndView mv = new ModelAndView(); 
+		
+		patientForm = patientService.login(patientForm);
+		if(patientForm!=null) {
+			request.getSession().setAttribute("patientForm", patientForm);
+			mv.setViewName("redirect:/patient/index");
+			return mv;
+		}else {
+			mv.setViewName("forward:/patient/login");
+			mv.addObject("message","用户名或密码错误");
+			return mv;
+		}
     }
 	
 	

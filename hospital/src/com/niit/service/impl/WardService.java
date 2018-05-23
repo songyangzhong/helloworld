@@ -6,14 +6,14 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.niit.dao.impl.WardDao;
+import com.niit.dao.impl.WardDaoImpl;
 import com.niit.model.Ward;
 
 @Service
 public class WardService{
 	
 	@Resource
-	private WardDao wardDao;
+	private WardDaoImpl wardDao;
 	
 	public void save(Ward ward) {
 		wardDao.save(ward);

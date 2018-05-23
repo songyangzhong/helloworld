@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -110,8 +111,8 @@
 									<dt>请选择</dt>
 									<dd>
 										<ul>
-											<option value="男" >男</option>
-											<option value="女" >女</option>
+											<!-- <option value="男" >男</option>
+											<option value="女" >女</option> -->
 											
 											<%-- <c:if test="${patientForm.gender}!='男'}"><option value="男">男</option></c:if>
                                 			<c:if test="${patientForm.gender}=='男'"><option value="男" selected>男</option></c:if>
@@ -119,8 +120,8 @@
                                 			<c:if test="${patientForm.gender}=='女'"><option value="女" selected>女</option></c:if> --%>
                                 			
                                 			
-                                			<%-- <option value="男" <c:if test="${patientForm.gender}=='男'">selected</c:if> >男</option>
-											<option value="女" <c:if test="${patientForm.gender}=='女'">selected</c:if> >女</option> --%>
+                                			<option value="男" <c:if test="${patientForm.gender}=='男'">selected</c:if> >男</option>
+											<option value="女" <c:if test="${patientForm.gender}=='女'">selected</c:if> >女</option>
 										</ul>
 									</dd>
 								</dl>

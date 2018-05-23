@@ -7,7 +7,7 @@ import com.niit.model.Ward;
 
 
 @Repository
-public class WardDao extends BaseDaoImpl<Ward>{
+public class WardDaoImpl extends BaseDaoImpl<Ward>{
 	
 }
 

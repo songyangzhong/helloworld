@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.model.Case;
 import com.niit.service.ICaseService;
+import com.niit.web.form.PatientForm;
 
 @Controller
 @RequestMapping("case")
@@ -23,13 +24,12 @@ public class CaseController {
     public ModelAndView findByPatientId(HttpServletRequest request){
 		//------
 		//从Session中获取病人信息
-		//request.getSession().equals("patient");
-		int patientId = 1;
+		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
+		int patientId = patientForm.getPatientId();
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("patient/case");
+		mv.setViewName("/patient/case");
 		List<Case> cases = caseService.findByPatientId(patientId);
-		System.out.println(cases.get(0).getPatientByPatientId().getPatientName());
 		mv.addObject("cases", cases);
         return mv; 
     }

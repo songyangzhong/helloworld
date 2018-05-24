@@ -2,6 +2,7 @@ package com.niit.web.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.niit.model.Patient;
 import com.niit.service.IPatientService;
 import com.niit.service.impl.PatientServiceImpl;
+import com.niit.util.MD5keyBean;
 import com.niit.web.form.PatientForm;
 
 @Controller
@@ -26,12 +28,10 @@ public class PatientController {
     public ModelAndView findPatientByPatientId(HttpServletRequest request){
 		//-----
 		//从Session中获取patient
-		//request.getSession().getAttribute("patient");
-		int patientId = 1;
+		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("patient/patientTab");
-		PatientForm patientForm = patientService.findById(patientId);
 		mv.addObject("patientForm", patientForm);
         return mv; 
     }
@@ -46,10 +46,7 @@ public class PatientController {
     public ModelAndView beforeUpate(HttpServletRequest request){
 		//---------
 		//从Session中获取patient
-		//request.getSession().getAttribute("patient");
-		int patientId = 1;
-		
-		PatientForm patientForm = patientService.findById(patientId);
+		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("patientForm",patientForm);
@@ -59,14 +56,20 @@ public class PatientController {
 	
 	@RequestMapping("patientUpdate")
     public String patientUpdate(HttpServletRequest request,PatientForm patientForm){
-		//---------
-		//从Session中获取patient
-		//request.getSession().getAttribute("patient");
-		int patientId = 1;
-		
 		Date createTime = new Date(System.currentTimeMillis());
 		patientForm.setCreateTime(createTime);
+		
+		//md5
+		MD5keyBean md5keyBean = new MD5keyBean();
+		Random rand = new Random();
+		byte ib = (byte) rand.nextInt(128);
+		String salt = MD5keyBean.byteHEX(ib);
+		patientForm.setSalt(salt);
+		String md5_password = md5keyBean.getkeyBeanofStr(patientForm.getPassword()+salt);
+		patientForm.setPassword(md5_password);
+		//
 		patientService.update(patientForm);
+		request.getSession().setAttribute("patientForm", patientForm);
 		
         return "redirect:/patient/findPatientByPatientId"; 
     }
@@ -75,7 +78,15 @@ public class PatientController {
     public String register(PatientForm patientForm,HttpServletRequest request){
 		Date createTime = new Date(System.currentTimeMillis());
 		patientForm.setCreateTime(createTime);
-		patientForm.setSalt("132");
+		//md5
+		MD5keyBean md5keyBean = new MD5keyBean();
+		Random rand = new Random();
+		byte ib = (byte) rand.nextInt(128);
+		String salt = MD5keyBean.byteHEX(ib);
+		patientForm.setSalt(salt);
+		String md5_password = md5keyBean.getkeyBeanofStr(patientForm.getPassword()+salt);
+		patientForm.setPassword(md5_password);
+		//
 		int patientId = patientService.save(patientForm);
 		patientForm.setPatientId(patientId);
 		request.getSession().setAttribute("patientForm", patientForm);

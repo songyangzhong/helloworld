@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.niit.dao.IPatientDao;
 import com.niit.model.Patient;
 import com.niit.service.IPatientService;
+import com.niit.util.MD5keyBean;
 import com.niit.web.form.PatientForm;
 
 @Service
@@ -91,7 +92,17 @@ public class PatientServiceImpl implements IPatientService{
 	public PatientForm login(PatientForm patientForm) {
 		Patient patient = patientDao.login(patientForm);
 		if(patient!=null) {
-			return this.patientVoTopatientDTO(patient);
+			//md5 password
+			String password = patientForm.getPassword();
+			String db_password = patient.getPassword();
+			MD5keyBean md5keyBean = new MD5keyBean();
+			String md5_password = md5keyBean.getkeyBeanofStr(password+patient.getSalt());
+			//password is wrong
+			if(!db_password.equals(md5_password)) {
+				return null;
+			}else {
+				return this.patientVoTopatientDTO(patient);
+			}
 		}else {
 			return null;
 		}

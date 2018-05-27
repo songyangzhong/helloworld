@@ -12,7 +12,12 @@ public class CustomExceptionResolver implements HandlerExceptionResolver{
 	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object object,
 			Exception e) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("error", "未知异常");
+		if (e instanceof Exception) {
+			CustomException ce = (CustomException) e;
+			mv.addObject("error", ce.getMessage());
+		}else {
+			mv.addObject("error", "未知异常");
+		}
 		mv.setViewName("error");
 		return mv;
 	}

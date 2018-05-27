@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.model.Case;
 import com.niit.service.ICaseService;
+import com.niit.util.CustomException;
 import com.niit.web.form.PatientForm;
 
 @Controller
@@ -21,10 +22,13 @@ public class CaseController {
 	private ICaseService caseService;
 	
 	@RequestMapping("findByPatientId")
-    public ModelAndView findByPatientId(HttpServletRequest request){
+    public ModelAndView findByPatientId(HttpServletRequest request) throws CustomException{
 		//------
 		//从Session中获取病人信息
 		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
+		if(patientForm == null) {
+			throw new CustomException("未登录");
+		}
 		int patientId = patientForm.getPatientId();
 		
 		ModelAndView mv = new ModelAndView();

@@ -15,7 +15,6 @@
 <link href="${pageContext.request.contextPath}/css/print.css" rel="stylesheet" type="text/css"  media="print" />
 <script src="${pageContext.request.contextPath}/js/jquery-1.10.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/side.js" type="text/javascript"></script>
-
 </head>
 
 <body>

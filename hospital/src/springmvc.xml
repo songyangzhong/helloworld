@@ -68,6 +68,9 @@
 		<aop:pointcut expression="execution(* com.niit.service.impl.*.*(..))" id="myPt"/>
 		<aop:advisor advice-ref="txAdivce" pointcut-ref="myPt"/>
 	</aop:config>
+	
+	<!-- 6.Springmvc的异常处理器 -->
+	<bean class="com.niit.util.CustomExceptionResolver"></bean>
     
   
 </beans>

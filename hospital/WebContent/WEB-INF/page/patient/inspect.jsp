@@ -32,6 +32,7 @@
 <th>创建时间</th>
 <th>操作</th>
 </tr>
+
 <tr>
 <td>1</td>
 <td>销售部</td>
@@ -39,15 +40,8 @@
 <td>2017</td>
 <td><a href="#">查看</a> | <a href="#">操作</a></td>
 </tr>
-<tr>
-<td>2</td>
-<td>销售部</td>
-<td>2017</td>
-<td>2017</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
+
 </table>
-<p class="msg">共找到47条年度预算记录，当前显示从第1条至第10条</p>
 </div>
 </div>
 <!-- /MainForm -->

@@ -7,5 +7,6 @@
     <class name="com.niit.model.Ward" table="t_ward" >
         <id name="wardId" column="WardId"/>
         <property name="createTime" column="CreateTime"/>
+        <property name="status" column="Status"/>
     </class>
 </hibernate-mapping>

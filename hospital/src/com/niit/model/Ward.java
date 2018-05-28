@@ -6,8 +6,18 @@ import java.util.Date;
 public class Ward {
     private int wardId;
     private Date createTime;
+    private int status;
+    
 
-    public int getWardId() {
+    public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public int getWardId() {
         return wardId;
     }
 

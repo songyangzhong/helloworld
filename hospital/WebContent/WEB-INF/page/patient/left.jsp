@@ -54,25 +54,6 @@
 						class="cks">医生信息</a><img class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
 				</dd>
 			</dl>
-			<dl class="system_log">
-				<dt>
-					<img class="icon1" src="${pageContext.request.contextPath}/img/coinL1.png" /><img class="icon2"
-						src="${pageContext.request.contextPath}/img/coinL2.png" /> 系统管理<img class="icon3"
-						src="${pageContext.request.contextPath}/img/coin19.png" /><img class="icon4"
-						src="${pageContext.request.contextPath}/img/coin20.png" />
-				</dt>
-				<dd>
-					<img class="coin11" src="${pageContext.request.contextPath}/img/coin111.png" /><img class="coin22"
-						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/changepwd"
-						target="main" class="cks">修改密码</a><img class="icon5"
-						src="${pageContext.request.contextPath}/img/coin21.png" />
-				</dd>
-				<dd>
-					<img class="coin11" src="${pageContext.request.contextPath}/img/coin111.png" /><img class="coin22"
-						src="${pageContext.request.contextPath}/img/coin222.png" /><a class="cks">退出</a><img
-						class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
-				</dd>
-			</dl>
 
 		</div>
 

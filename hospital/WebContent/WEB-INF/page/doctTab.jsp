@@ -52,7 +52,6 @@
 </tr>
 </c:forEach>
 </table>
-<p class="msg">共找到47条年度预算记录，当前显示从第1条至第10条</p>
 </div>
 </div>
 <!-- /MainForm -->

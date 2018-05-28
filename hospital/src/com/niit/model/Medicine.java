@@ -1,13 +1,24 @@
 package com.niit.model;
 
+import java.util.Date;
+
 public class Medicine {
     private int medicineId;
     private String medicineName;
     private String metering;
+    private double cost;
     private String description;
-    private String createTime;
+    private Date createTime;
 
-    public int getMedicineId() {
+    public double getCost() {
+		return cost;
+	}
+
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+
+	public int getMedicineId() {
         return medicineId;
     }
 
@@ -39,12 +50,14 @@ public class Medicine {
         this.description = description;
     }
 
-    public String getCreateTime() {
-        return createTime;
-    }
+	public Date getCreateTime() {
+		return createTime;
+	}
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+    
 
 }

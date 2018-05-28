@@ -10,5 +10,6 @@
         <property name="metering" column="Metering"/>
         <property name="description" column="Description"/>
         <property name="createTime" column="CreateTime"/>
+        <property name="cost" column="Cost"/>
     </class>
 </hibernate-mapping>

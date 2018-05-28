@@ -41,13 +41,18 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/ward"
+						src="img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/ward/findAll"
 						target="main">病床信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/midicine"
+						src="img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/medicine/findAll"
 						target="main">药物信息</a><img class="icon5" src="img/coin21.png" />
+				</dd>
+				<dd>
+					<img class="coin11" src="img/coin111.png" /><img class="coin22"
+						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/inspect/findAll" target="main"
+						class="cks">检查信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 			</dl>
 			<dl class="system_log">
@@ -67,11 +72,7 @@
 						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/case" target="main"
 						class="cks">病例信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
-				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/inspect" target="main"
-						class="cks">检查信息</a><img class="icon5" src="img/coin21.png" />
-				</dd>
+				
 			</dl>
 			<dl class="system_log">
 				<dt>
@@ -84,37 +85,6 @@
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
 						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/doctor/findAll" target="main"
 						class="cks">医生信息</a><img class="icon5" src="img/coin21.png" />
-				</dd>
-			</dl>
-			<dl class="system_log">
-				<dt>
-					<img class="icon1" src="img/coin11.png" /><img class="icon2"
-						src="img/coin12.png" /> 新闻管理<img class="icon3"
-						src="img/coin19.png" /><img class="icon4"
-						src="img/coin20.png" />
-				</dt>
-				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks">新闻管理</a><img class="icon5" src="img/coin21.png" />
-				</dd>
-			</dl>
-			<dl class="system_log">
-				<dt>
-					<img class="icon1" src="img/coinL1.png" /><img class="icon2"
-						src="img/coinL2.png" /> 系统管理<img class="icon3"
-						src="img/coin19.png" /><img class="icon4"
-						src="img/coin20.png" />
-				</dt>
-				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/changepwd"
-						target="main" class="cks">修改密码</a><img class="icon5"
-						src="img/coin21.png" />
-				</dd>
-				<dd>
-					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks">退出</a><img
-						class="icon5" src="img/coin21.png" />
 				</dd>
 			</dl>
 

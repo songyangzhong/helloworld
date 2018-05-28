@@ -40,6 +40,7 @@
     <mvc:resources mapping="/js/**" location="/js/" />
     <mvc:resources mapping="/img/**" location="/img/" />
     
+    <!--文件上传，id必须为multipartResolver  -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
           <property name="defaultEncoding" value="utf-8" />  
           <property name="maxUploadSize" value="1024000" />  

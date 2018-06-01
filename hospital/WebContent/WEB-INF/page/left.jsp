@@ -28,7 +28,7 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/keshiTab"
+						src="img/coin222.png" /><a class="cks" href="${pageContext.request.contextPath}/department/findAll"
 						target="main">科室信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 			</dl>

@@ -14,7 +14,7 @@
         <property name="age" column="Age"/>
         <property name="phoneNumber" column="PhoneNumber"/>
         <property name="createTime" column="CreateTime"/>
-        <many-to-one name="departmentByDepartmentId" class="com.niit.model.Department" insert="false" update="false">
+        <many-to-one name="departmentByDepartmentId" class="com.niit.model.Department" insert="false" update="false" cascade="all">
             <column name="DepartmentId"/>
         </many-to-one>
         <set name="casesByDoctorId" inverse="true">
@@ -23,7 +23,7 @@
             </key>
             <one-to-many not-found="ignore" class="com.niit.model.Case"/>
         </set>
-        <set name="registersByDoctorId" inverse="true">
+        <set name="registersByDoctorId" inverse="true" cascade="all">
             <key>
                 <column name="DoctorId"/>
             </key>

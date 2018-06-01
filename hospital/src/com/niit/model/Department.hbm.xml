@@ -10,17 +10,17 @@
         <property name="registerCost" column="RegisterCost"/>
         <property name="doctorId" column="DoctorId"/>
         <property name="createTime" column="CreateTime"/>
-        <set name="doctorsByDepartmentId" inverse="true">
+        <set name="doctorsByDepartmentId" inverse="true" cascade="all">
             <key>
                 <column name="DepartmentId"/>
             </key>
             <one-to-many not-found="ignore" class="com.niit.model.Doctor"/>
         </set>
-        <set name="registersByDepartmentId" inverse="true">
+        <set name="registersByDepartmentId" inverse="true" cascade="all">
             <key>
                 <column name="DepartmentId"/>
             </key>
-            <one-to-many not-found="ignore" class="com.niit.model.Register"/>
+            <one-to-many not-found="ignore" class="com.niit.model.Register" />
         </set>
     </class>
 </hibernate-mapping>

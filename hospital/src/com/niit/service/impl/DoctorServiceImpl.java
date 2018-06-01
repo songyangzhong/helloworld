@@ -1,5 +1,6 @@
 package com.niit.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -20,12 +21,13 @@ public class DoctorServiceImpl implements IDoctorService{
 	@Override
 	public void saveDoctor(Doctor doctor) {
 		doctor.setPassword(new MD5keyBean().getkeyBeanofStr(doctor.getPassword()));
+		doctor.setCreateTime(new Date());
 		doctorDao.save(doctor);
 		
 	}
 	@Override
-	public List<Doctor> findDoctorById(Integer doctorId) {
-		return (List<Doctor>) doctorDao.findById(doctorId);
+	public Doctor findDoctorById(Integer doctorId) {
+		return  doctorDao.findById(doctorId);
 	}
 
 	@Override
@@ -40,6 +42,7 @@ public class DoctorServiceImpl implements IDoctorService{
 
 	@Override
 	public void updateDoctor(Doctor doctor) {
+		doctor.setCreateTime(new Date());
 		this.doctorDao.update(doctor);
 	}
 

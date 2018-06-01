@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -27,19 +28,25 @@
 <table cellpadding="0" cellspacing="0">
 <tr>
 <th>检查编号</th>
+<th>病人编号</th>
+<th>病人姓名</th>
 <th>检查项目名称</th>
+<th>花费金额</th>
 <th>描述</th>
 <th>创建时间</th>
-<th>操作</th>
 </tr>
 
+<c:forEach items="${inspects}" var="inspect">
 <tr>
-<td>1</td>
-<td>销售部</td>
-<td>2017</td>
-<td>2017</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
+<td>${inspect.inspectId}</td>
+<td>${patientForm.patientId}</td>
+<td>${inspect.}</td>
+<td>${inspect.inspectName}</td>
+<td>${inspect.cost}</td>
+<td></td>
+<td></td>
 </tr>
+</c:forEach>
 
 </table>
 </div>

@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.niit.model.Patient" table="t_patient" schema="hospital">
+    <class name="com.niit.model.Patient" table="t_patient" schema="hospital" lazy="false">
         <id name="patientId" column="PatientId"/>
         <property name="patientName" column="PatientName"/>
         <property name="password" column="Password"/>
@@ -29,5 +29,9 @@
             </key>
             <one-to-many not-found="ignore" class="com.niit.model.Register"/>
         </set>
+        <set name="inspects" table="patient_inspect">
+        	<key column="patientId"></key>
+        	<many-to-many class="com.niit.model.Inspect" column="inspectId"></many-to-many>
+    	</set>
     </class>
 </hibernate-mapping>

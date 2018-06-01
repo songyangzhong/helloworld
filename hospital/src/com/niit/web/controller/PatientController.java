@@ -3,6 +3,7 @@ package com.niit.web.controller;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.model.Inspect;
 import com.niit.model.Patient;
 import com.niit.service.IPatientService;
 import com.niit.service.impl.PatientServiceImpl;
@@ -107,6 +109,19 @@ public class PatientController {
 			mv.addObject("message","用户名或密码错误");
 			return mv;
 		}
+    }
+	
+	@RequestMapping("findInspectByPatientId")
+    public ModelAndView findInspectByPatientId(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView(); 
+		
+		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
+		Set<Inspect> inspects = patientForm.getInspects();
+		mv.addObject("inspects",inspects);
+		mv.addObject("patientForm",patientForm);
+		
+		mv.setViewName("/patient/inspect");
+		return mv;
     }
 	
 	

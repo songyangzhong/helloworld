@@ -2,8 +2,10 @@ package com.niit.web.form;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.Set;
 
 import com.niit.model.Case;
+import com.niit.model.Inspect;
 import com.niit.model.Register;
 import com.niit.model.Ward;
 
@@ -19,6 +21,15 @@ public class PatientForm {
 	private String phoneNumber;
 	private Date createTime;
 	private String salt;
+	private Set<Inspect> inspects;
+
+	public Set<Inspect> getInspects() {
+		return inspects;
+	}
+
+	public void setInspects(Set<Inspect> inspects) {
+		this.inspects = inspects;
+	}
 
 	public String getSalt() {
 		return salt;

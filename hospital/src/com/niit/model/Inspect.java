@@ -2,6 +2,8 @@ package com.niit.model;
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Inspect {
     private int inspectId;
@@ -9,8 +11,17 @@ public class Inspect {
     private String description;
     private double cost;
     private Date createTime;
+    private Set<Patient> patients = new HashSet<>();
+    
+    public Set<Patient> getPatients() {
+		return patients;
+	}
 
-    public int getInspectId() {
+	public void setPatients(Set<Patient> patients) {
+		this.patients = patients;
+	}
+
+	public int getInspectId() {
         return inspectId;
     }
 

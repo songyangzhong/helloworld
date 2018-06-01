@@ -68,6 +68,7 @@ public class PatientServiceImpl implements IPatientService{
 		patientForm.setPatientName(patient.getPatientName());
 		patientForm.setPhoneNumber(patient.getPhoneNumber());
 		patientForm.setWardId(patient.getWardId());
+		patientForm.setInspects(patient.getInspects());
 		return patientForm;
 	}
 	
@@ -84,6 +85,7 @@ public class PatientServiceImpl implements IPatientService{
 		patient.setPhoneNumber(patientForm.getPhoneNumber());
 		patient.setWardId(patientForm.getWardId());
 		patient.setSalt(patientForm.getSalt());
+		patient.setInspects(patientForm.getInspects());
 		
 		return patient;
 	}

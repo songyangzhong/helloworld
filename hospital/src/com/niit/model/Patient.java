@@ -2,6 +2,8 @@ package com.niit.model;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Patient {
 	private int patientId;
@@ -18,6 +20,15 @@ public class Patient {
 	private Collection<Case> casesByPatientId;
 	private Ward WardByWardId;
 	private Collection<Register> registersByPatientId;
+	private Set<Inspect> inspects = new HashSet<Inspect>();
+
+	public Set<Inspect> getInspects() {
+		return inspects;
+	}
+
+	public void setInspects(Set<Inspect> inspects) {
+		this.inspects = inspects;
+	}
 
 	public Ward getWardByWardId() {
 		return WardByWardId;

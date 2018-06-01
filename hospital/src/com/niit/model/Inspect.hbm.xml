@@ -10,5 +10,10 @@
         <property name="description" column="Description"/>
         <property name="cost" column="Cost"/>
         <property name="createTime" column="CreateTime"/>
+        
+        <set name="patients" table="patient_inspect">
+        	<key column="inspectId"></key>
+        	<many-to-many class="com.niit.model.Patient" column="patientId"></many-to-many>
+    	</set>
     </class>
 </hibernate-mapping>

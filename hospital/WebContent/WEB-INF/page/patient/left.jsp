@@ -37,7 +37,7 @@
 				</dd>
 				<dd>
 					<img class="coin11" src="${pageContext.request.contextPath}/img/coin111.png" /><img class="coin22"
-						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/inspect" target="main"
+						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/findInspectByPatientId" target="main"
 						class="cks">检查信息</a><img class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
 				</dd>
 			</dl>
@@ -49,7 +49,7 @@
 						src="${pageContext.request.contextPath}/img/coin20.png" />
 				</dt>
 				<dd>
-					<img class="coin11" src="${pageContext.request.contextPath}img/coin111.png" /><img class="coin22"
+					<img class="coin11" src="${pageContext.request.contextPath}/img/coin111.png" /><img class="coin22"
 						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/doctTab" target="main"
 						class="cks">医生信息</a><img class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
 				</dd>

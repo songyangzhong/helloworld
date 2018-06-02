@@ -17,20 +17,15 @@ public class Doctor {
     private Collection<Case> casesByDoctorId;
     private Department departmentByDepartmentId;
     private Collection<Register> registersByDoctorId;
-
-    
     
     public Doctor() {
 		super();
 	}
-    
    
 	public Doctor(int doctorId) {
 		super();
 		this.doctorId = doctorId;
 	}
-
-
 
 	public int getDoctorId() {
         return doctorId;

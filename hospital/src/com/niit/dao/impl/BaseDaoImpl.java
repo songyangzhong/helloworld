@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.hibernate.Session;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import com.niit.dao.BaseDao;
@@ -16,7 +17,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	private Class entity = (Class)GenericSuperClass.getClass(this.getClass());
 	
 	@Resource
-	protected HibernateTemplate ht;
+	public HibernateTemplate ht;
 
 	@Override
     public int save(T entity) {
@@ -56,6 +57,11 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	@Override
 	public List<T> findAll() {
 		return (List<T>) ht.find("from " + getClassName());
+	}
+
+	@Override
+	public Session getSession() {
+		return ht.getSessionFactory().getCurrentSession();
 	}
 
 }

@@ -14,10 +14,10 @@ public class CustomExceptionResolver implements HandlerExceptionResolver{
 		ModelAndView mv = new ModelAndView();
 		if (e instanceof CustomException) {
 			CustomException ce = (CustomException) e;
-			System.out.println(e);
+			e.printStackTrace();
 			mv.addObject("error", ce.getMessage());
 		}else {
-			System.out.println(e);
+			e.printStackTrace();
 			mv.addObject("error", "未知异常");
 		}
 		mv.setViewName("error");

@@ -1,66 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE HTML>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta name="generator" content="" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<link href="css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print" />
-<link href="css/print.css" rel="stylesheet" type="text/css"  media="print" />
-<script src="js/jquery-1.10.1.min.js"></script>
-<script src="js/side.js" type="text/javascript"></script>
-
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/public.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page.css" />
+<link href="${pageContext.request.contextPath}/css/haiersoft.css" rel="stylesheet" type="text/css"
+	media="screen,print" />
+<link href="${pageContext.request.contextPath}/css/print.css" rel="stylesheet" type="text/css"
+	media="print" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/public.js"></script>
 </head>
-
 <body>
 
-
-<!-- MainForm -->
-<div id="MainForm">
-<div class="form_boxA">
-<h2>挂号信息</h2>
-<table cellpadding="0" cellspacing="0">
-<tr>
-<th>挂号编号</th>
-<th>病人编号</th>
-<th>科室编号</th>
-<th>医生编号</th>
-<th>就诊状态</th>
-<th>创建时间</th>
-<th>操作</th>
-</tr>
-<tr>
-<td>1</td>
-<td>销售部</td>
-<td>2017</td>
-<td>2017</td>
-<td>2017</td>
-<td>2017</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td>销售部</td>
-<td>2017</td>
-<td>2017</td>
-<td>2017</td>
-<td>2017</td>
-<td><a href="#">查看</a> | <a href="#">操作</a></td>
-</tr>
-</table>
-<p class="msg">共找到47条年度预算记录，当前显示从第1条至第10条</p>
-</div>
-</div>
-<!-- /MainForm -->
+	<!-- 登录body -->
+	<div class="logDiv">
+		<img class="logBanner" src="${pageContext.request.contextPath}/img/logBanner.png" />
+		<div class="logGet">
+			<!-- 头部提示信息 -->
+			<div class="logD logDtip">
+				<p class="p1">注册</p>
+			</div>
+			<!-- 输入框 -->
+			<form action="${pageContext.request.contextPath}/doctor/doctorRegister" method="post">
+			<div class="lgD">
+				<img class="img1" src="${pageContext.request.contextPath}/img/logName.png" /><input type="text"
+					placeholder="输入用户名" name="doctorName"/>
+			</div>
+			<div class="lgD">
+				<img class="img1" src="${pageContext.request.contextPath}/img/logPwd.png" /><input type="password"
+					placeholder="输入用户密码" name="password"/>
+			</div>
+			<div class="lgD">
+				<img class="img1" src="${pageContext.request.contextPath}/img/logPwd.png" /><input type="number"
+					placeholder="输入用户年龄" name="age" />
+			</div>
+			<div class="lgD">
+				<select name="gender">
+					<option value="男" >男</option>
+					<option value="女" >女</option>
+				</select>
+			</div>
+			<div class="lgD">
+				<select name="departmentId">
+					<c:forEach items="${departments}" var="department">
+					<option value="${department.departmentId}" >${department.departmentName}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div class="lgD">
+				<img class="img1" src="${pageContext.request.contextPath}/img/logPwd.png" /><input type="text"
+					placeholder="输入用户联系方式" name="phoneNumber"/>
+			</div>
+			<div class="logC">
+				<%-- <a href="${pageContext.request.contextPath}index" target="_self"><button>登 录</button></a> --%>
+				<div class="btn_box floatR"><input type="submit" value="注册"/></div>
+			</div>
+			</form>
+		</div>
+	</div>
+	<!-- 登录body  end -->
 
 </body>
 </html>

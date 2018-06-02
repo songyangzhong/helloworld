@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.print.Doc;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,13 +26,10 @@ public class DoctorControler {
 	@Resource
 	private IDepartmentService  departmentService;
 	
-	
-	@RequestMapping("/login")
-	public String login(String doctorName ,String password){
+	@RequestMapping("/doctorLogin")
+	public String doctorLogin(String doctorName ,String password){
 		return password;
-		
 	}
-	
 	
 	@RequestMapping("/findAll")
 	public String findAll(Model model){
@@ -47,14 +45,15 @@ public class DoctorControler {
 	}
 	
 	
-	@RequestMapping("/register")
+	@RequestMapping("/doctorRegister")
 	public String register(Doctor doctor,Integer departmentId){
 		Department department = this.departmentService.findDepartmentById(departmentId);
 		doctor.setPassword(new MD5keyBean().getkeyBeanofStr(doctor.getPassword()));
 		doctor.setCreateTime(new Date());
 		doctor.setDepartmentByDepartmentId(department);
 		department.getDoctorsByDepartmentId().add(doctor);
-		return "/index";	
+		doctorService.saveDoctor(doctor);
+		return "/index";
 	}
 	
 	@RequestMapping("/updateDoctor_toTab")
@@ -70,5 +69,18 @@ public class DoctorControler {
 		doctorService.updateDoctor(doctor);
 		return "forward:findAll";
 	}
+	
+	@RequestMapping("/register")
+	public String register(HttpServletRequest request,Model model){
+		List<Department> departments = departmentService.findAll();
+		model.addAttribute("departments", departments);
+		return "register";
+	}
+	
+	@RequestMapping("/login")
+	public String login(){
+		return "login";
+	}
+	
 
 }

@@ -18,6 +18,7 @@
 		</div>
 		<div class="headR">
 			<span style="color:#FFF">欢迎：admin</span> <a href="${pageContext.request.contextPath}/head2.html" rel="external">【退出】</a>
+			<span style="color:#FFF"><a href="login.html" target="_blank">【登录】</a></span> 
 		</div>
 	</div>
 </body>

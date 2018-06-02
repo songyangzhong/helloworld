@@ -7,5 +7,5 @@ import com.niit.model.Doctor;
 
 @Repository
 public class DoctorDaoImpl extends BaseDaoImpl<Doctor> implements IDoctorDao{
-
+	
 }

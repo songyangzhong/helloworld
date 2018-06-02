@@ -1,6 +1,7 @@
 package com.niit.service.impl;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.Resource;
 
@@ -48,6 +49,21 @@ public class PatientServiceImpl implements IPatientService{
 
 	@Override
 	public void update(PatientForm patientForm) {
+		Patient patient_db = patientDao.findById(patientForm.getPatientId());
+		String password_db = patient_db.getPassword();
+		//密码已修改
+		if(!password_db.equals(patientForm.getPassword())) {
+			//md5
+			MD5keyBean md5keyBean = new MD5keyBean();
+			Random rand = new Random();
+			byte ib = (byte) rand.nextInt(128);
+			String salt = MD5keyBean.byteHEX(ib);
+			patientForm.setSalt(salt);
+			String md5_password = md5keyBean.getkeyBeanofStr(patientForm.getPassword()+salt);
+			patientForm.setPassword(md5_password);
+			//
+		}
+		patientDao.getSession().evict(patient_db);
 		patientDao.update(patientDTOTopatientVO(patientForm));
 	}
 
@@ -69,6 +85,7 @@ public class PatientServiceImpl implements IPatientService{
 		patientForm.setPhoneNumber(patient.getPhoneNumber());
 		patientForm.setWardId(patient.getWardId());
 		patientForm.setInspects(patient.getInspects());
+		patientForm.setSalt(patient.getSalt());
 		return patientForm;
 	}
 	

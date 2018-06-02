@@ -2,6 +2,7 @@ package com.niit.service.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.Resource;
 
@@ -20,11 +21,19 @@ public class DoctorServiceImpl implements IDoctorService{
 
 	@Override
 	public void saveDoctor(Doctor doctor) {
-		doctor.setPassword(new MD5keyBean().getkeyBeanofStr(doctor.getPassword()));
+		//md5
+		MD5keyBean md5keyBean = new MD5keyBean();
+		Random rand = new Random();
+		byte ib = (byte) rand.nextInt(128);
+		String salt = MD5keyBean.byteHEX(ib);
+		doctor.setSalt(salt);
+		String md5_password = md5keyBean.getkeyBeanofStr(doctor.getPassword()+salt);
+		doctor.setPassword(md5_password);
+		//
 		doctor.setCreateTime(new Date());
 		doctorDao.save(doctor);
-		
 	}
+	
 	@Override
 	public Doctor findDoctorById(Integer doctorId) {
 		return  doctorDao.findById(doctorId);
@@ -42,6 +51,21 @@ public class DoctorServiceImpl implements IDoctorService{
 
 	@Override
 	public void updateDoctor(Doctor doctor) {
+		Doctor doctor_db = findDoctorById(doctor.getDoctorId());
+		String password_db = doctor_db.getPassword();
+		//密码已修改
+		if(!password_db.equals(doctor.getPassword())) {
+			//md5
+			MD5keyBean md5keyBean = new MD5keyBean();
+			Random rand = new Random();
+			byte ib = (byte) rand.nextInt(128);
+			String salt = MD5keyBean.byteHEX(ib);
+			doctor.setSalt(salt);
+			String md5_password = md5keyBean.getkeyBeanofStr(doctor.getPassword()+salt);
+			doctor.setPassword(md5_password);
+			//
+		}
+		this.doctorDao.getSession().evict(doctor_db);
 		doctor.setCreateTime(new Date());
 		this.doctorDao.update(doctor);
 	}

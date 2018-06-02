@@ -61,15 +61,6 @@ public class PatientController {
 		Date createTime = new Date(System.currentTimeMillis());
 		patientForm.setCreateTime(createTime);
 		
-		//md5
-		MD5keyBean md5keyBean = new MD5keyBean();
-		Random rand = new Random();
-		byte ib = (byte) rand.nextInt(128);
-		String salt = MD5keyBean.byteHEX(ib);
-		patientForm.setSalt(salt);
-		String md5_password = md5keyBean.getkeyBeanofStr(patientForm.getPassword()+salt);
-		patientForm.setPassword(md5_password);
-		//
 		patientService.update(patientForm);
 		request.getSession().setAttribute("patientForm", patientForm);
 		

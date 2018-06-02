@@ -80,7 +80,7 @@ $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hi
 
 <tr>
  <th>密码 <span class="f_cB">*</span></th>
- <td><div class="txtbox floatL" style="width:100px;"><input  name="password" type="text"  min="1" max="150"size="5" value="${doctor.password}"></div></td>
+ <td><div class="txtbox floatL" style="width:100px;"><input  name="password" type="password"  min="1" max="150"size="5" value="${doctor.password}"></div></td>
  </tr>
 <tr>
 

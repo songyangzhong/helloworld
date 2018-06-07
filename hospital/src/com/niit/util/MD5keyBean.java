@@ -323,7 +323,8 @@ public class MD5keyBean {
 	 */
 	public static void main(String args[]) {
 		MD5keyBean m = new MD5keyBean();
-		String md5 = m.getkeyBeanofStr("123");
+		
+		String md5 = m.getkeyBeanofStr("q3E");
 		System.out.println(md5);
 	}
 }

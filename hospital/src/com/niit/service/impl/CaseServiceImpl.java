@@ -21,4 +21,9 @@ public class CaseServiceImpl implements ICaseService{
 		return caseDao.findByPatientId(patientId);
 	}
 
+	@Override
+	public List<Case> findAll() {
+		return caseDao.findAll();
+	}
+
 }

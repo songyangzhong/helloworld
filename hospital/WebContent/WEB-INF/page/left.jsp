@@ -64,12 +64,12 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/patientTab" target="main"
+						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/doctor/findAllPatients" target="main"
 						class="cks">病人信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="img/coin111.png" /><img class="coin22"
-						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/case" target="main"
+						src="img/coin222.png" /><a href="${pageContext.request.contextPath}/doctor/findAllCases" target="main"
 						class="cks">病例信息</a><img class="icon5" src="img/coin21.png" />
 				</dd>
 				

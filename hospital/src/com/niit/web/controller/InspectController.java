@@ -24,7 +24,7 @@ public class InspectController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/inspect");
 		mv.addObject("inspects", inspects);
-        return mv; 
+        return mv;
     }
 	
 	@RequestMapping("/delete")

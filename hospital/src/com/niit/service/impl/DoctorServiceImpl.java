@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.niit.dao.IDoctorDao;
 import com.niit.model.Doctor;
+import com.niit.model.Patient;
 import com.niit.service.IDoctorService;
 import com.niit.util.MD5keyBean;
 
@@ -73,6 +74,25 @@ public class DoctorServiceImpl implements IDoctorService{
 	@Override
 	public void deleteDoctor(Doctor doctor) {
 		this.doctorDao.delete(doctor);
+	}
+
+	@Override
+	public Doctor login(String doctorName, String password) {
+		Doctor doctor = doctorDao.findByDoctorName(doctorName);
+		if(doctor!=null) {
+			//md5 password
+			String db_password = doctor.getPassword();
+			MD5keyBean md5keyBean = new MD5keyBean();
+			String md5_password = md5keyBean.getkeyBeanofStr(password+doctor.getSalt());
+			//password is wrong
+			if(!db_password.equals(md5_password)) {
+				return null;
+			}else {
+				return doctor;
+			}
+		}else {
+			return null;
+		}
 	}
 
 }

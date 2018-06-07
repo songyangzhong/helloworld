@@ -6,4 +6,5 @@ import com.niit.model.Case;
 
 public interface ICaseService {
 	public List<Case> findByPatientId(int patientId);
+	public List<Case> findAll();
 }

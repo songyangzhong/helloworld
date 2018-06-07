@@ -40,11 +40,11 @@
 <tr>
 <td>${inspect.inspectId}</td>
 <td>${patientForm.patientId}</td>
-<td>${inspect.}</td>
+<td>${patientForm.patientName}</td>
 <td>${inspect.inspectName}</td>
 <td>${inspect.cost}</td>
-<td></td>
-<td></td>
+<td>${inspect.description}</td>
+<td>${inspect.createTime}</td>
 </tr>
 </c:forEach>
 

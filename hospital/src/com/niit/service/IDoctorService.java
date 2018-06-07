@@ -11,5 +11,5 @@ public interface IDoctorService {
     public void deleteDoctorById(Integer doctorId);
     public void deleteDoctor(Doctor doctor);
     public void updateDoctor(Doctor doctor);
-    
+	public Doctor login(String doctorName, String password);
 }

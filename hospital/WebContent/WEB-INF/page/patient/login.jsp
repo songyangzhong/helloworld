@@ -40,9 +40,7 @@
 				<div class="btn_box floatR"><input type="submit" value="登录"/></div>
 			</div>
 			</form>
-			<c:if test="not empty message">
-				<p>${message}</p>
-			</c:if>
+			<p>${message}</p>
 		</div>
 	</div>
 	<!-- 登录body  end -->

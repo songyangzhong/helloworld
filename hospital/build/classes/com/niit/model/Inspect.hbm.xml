@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.niit.model.Inspect" table="t_inspect" schema="hospital">
+    <class name="com.niit.model.Inspect" table="t_inspect" schema="hospital" lazy="false">
         <id name="inspectId" column="InspectId"/>
         <property name="inspectName" column="InspectName"/>
         <property name="description" column="Description"/>

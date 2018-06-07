@@ -104,6 +104,10 @@ public class PatientController {
 	
 	@RequestMapping("findInspectByPatientId")
     public ModelAndView findInspectByPatientId(HttpServletRequest request){
+		//思路：按照一对多方式查询
+		//多表查询patient/inspect/patient_inspect
+		//方案一：创建新类与第三张表对应
+		//方案二：多表查询返回List<Object> 直接用
 		ModelAndView mv = new ModelAndView(); 
 		
 		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");

@@ -11,10 +11,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.niit.model.Case;
 import com.niit.model.Department;
 import com.niit.model.Doctor;
+import com.niit.model.Patient;
+import com.niit.service.ICaseService;
 import com.niit.service.IDepartmentService;
 import com.niit.service.IDoctorService;
+import com.niit.service.IPatientService;
+import com.niit.service.impl.PatientServiceImpl;
 import com.niit.util.MD5keyBean;
 
 @Controller
@@ -24,11 +29,24 @@ public class DoctorControler {
 	private IDoctorService doctorService;
 	
 	@Resource
+	private IPatientService patientService;
+	
+	@Resource
 	private IDepartmentService  departmentService;
 	
+	@Resource
+	private ICaseService caseService;
+	
 	@RequestMapping("/doctorLogin")
-	public String doctorLogin(String doctorName ,String password){
-		return password;
+	public String doctorLogin(String doctorName,String password,Model model,HttpServletRequest request){
+		Doctor doctor = doctorService.login(doctorName,password);
+		if(doctor!=null) {
+			request.getSession().setAttribute("doctor",doctor);
+			return "redirect:/index";
+		}else {
+			model.addAttribute("message","用户名或密码错误");
+			return "forward:/doctor/login";
+		}
 	}
 	
 	@RequestMapping("/findAll")
@@ -48,7 +66,6 @@ public class DoctorControler {
 	@RequestMapping("/doctorRegister")
 	public String register(Doctor doctor,Integer departmentId){
 		Department department = this.departmentService.findDepartmentById(departmentId);
-		doctor.setPassword(new MD5keyBean().getkeyBeanofStr(doctor.getPassword()));
 		doctor.setCreateTime(new Date());
 		doctor.setDepartmentByDepartmentId(department);
 		department.getDoctorsByDepartmentId().add(doctor);
@@ -81,6 +98,21 @@ public class DoctorControler {
 	public String login(){
 		return "login";
 	}
+	
+	@RequestMapping("/findAllPatients")
+	public String findAllPatients(Model model){
+		List<Patient> patients = patientService.findAll();
+		model.addAttribute("patients", patients);
+		return "patientTab";
+	}
+	
+	@RequestMapping("/findAllCases")
+	public String findAllCases(Model model){
+		List<Case> cases = caseService.findAll();
+		model.addAttribute("cases", cases);
+		return "case";
+	}
+	
 	
 
 }

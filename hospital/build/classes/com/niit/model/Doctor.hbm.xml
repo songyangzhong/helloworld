@@ -17,7 +17,7 @@
         <many-to-one name="departmentByDepartmentId" class="com.niit.model.Department" insert="false" update="false" cascade="all">
             <column name="DepartmentId"/>
         </many-to-one>
-        <set name="casesByDoctorId" inverse="true">
+        <set name="casesByDoctorId" inverse="true" cascade="all">
             <key>
                 <column name="DoctorId"/>
             </key>

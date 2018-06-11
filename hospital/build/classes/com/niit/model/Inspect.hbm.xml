@@ -11,7 +11,7 @@
         <property name="cost" column="Cost"/>
         <property name="createTime" column="CreateTime"/>
         
-        <set name="patients" table="patient_inspect">
+        <set name="patients" table="patient_inspect" cascade="all">
         	<key column="inspectId"></key>
         	<many-to-many class="com.niit.model.Patient" column="patientId"></many-to-many>
     	</set>

@@ -17,19 +17,19 @@
         <property name="phoneNumber" column="PhoneNumber"/>
         <property name="createTime" column="CreateTime"/>
         <one-to-one name="WardByWardId" constrained="false" ></one-to-one>
-        <set name="casesByPatientId" inverse="true">
+        <set name="casesByPatientId" inverse="true" cascade="all">
             <key>
                 <column name="PatientId"/>
             </key>
             <one-to-many not-found="ignore" class="com.niit.model.Case"/>
         </set>
-        <set name="registersByPatientId" inverse="true">
+        <set name="registersByPatientId" inverse="true" cascade="all">
             <key>
                 <column name="PatientId"/>
             </key>
             <one-to-many not-found="ignore" class="com.niit.model.Register"/>
         </set>
-        <set name="inspects" table="patient_inspect">
+        <set name="inspects" table="patient_inspect" cascade="all">
         	<key column="patientId"></key>
         	<many-to-many class="com.niit.model.Inspect" column="inspectId"></many-to-many>
     	</set>

@@ -11,13 +11,13 @@
         <property name="doctorId" column="DoctorId"/>
         <property name="createTime" column="CreateTime"/>
         <property name="state" column="State"/>
-        <many-to-one name="patientByPatientId" class="com.niit.model.Patient" insert="false" update="false">
+        <many-to-one name="patientByPatientId" class="com.niit.model.Patient" insert="false" update="false" cascade="all">
             <column name="PatientId"/>
         </many-to-one>
-        <many-to-one name="departmentByDepartmentId" class="com.niit.model.Department" insert="false" update="false">
+        <many-to-one name="departmentByDepartmentId" class="com.niit.model.Department" insert="false" update="false" cascade="all">
             <column name="DepartmentId"/>
         </many-to-one>
-        <many-to-one name="doctorByDoctorId" class="com.niit.model.Doctor" insert="false" update="false">
+        <many-to-one name="doctorByDoctorId" class="com.niit.model.Doctor" insert="false" update="false" cascade="all">
             <column name="DoctorId"/>
         </many-to-one>
     </class>

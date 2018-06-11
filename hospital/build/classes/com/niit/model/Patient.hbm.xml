@@ -33,5 +33,11 @@
         	<key column="patientId"></key>
         	<many-to-many class="com.niit.model.Inspect" column="inspectId"></many-to-many>
     	</set>
+    	
+    	<set name="doctors" table="doctor_patient">
+        	<key column="patientId"></key>
+        	<many-to-many class="com.niit.model.Doctor" column="doctorId"></many-to-many>
+    	</set>
+    	
     </class>
 </hibernate-mapping>

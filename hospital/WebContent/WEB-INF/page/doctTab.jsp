@@ -48,7 +48,7 @@
 <td>${doctor.phoneNumber}</td>
 <td>${doctor.createTime}</td>
 
-<td><a href="${pageContext.request.contextPath}/doctor/updateDoctor_toTab?id=${doctor.doctorId}">修改</a> | <a href="${pageContext.request.contextPath}/doctor/deleteDoctorById?id=${doctor.doctorId}">删除</a></td>
+<td><a href="${pageContext.request.contextPath}/patient/findPatientsByDoctorId?doctorId=${doctor.doctorId}">病人</a> |<a href="${pageContext.request.contextPath}/doctor/updateDoctor_toTab?id=${doctor.doctorId}">修改</a> | <a href="${pageContext.request.contextPath}/doctor/deleteDoctorById?id=${doctor.doctorId}">删除</a></td>
 </tr>
 </c:forEach>
 </table>

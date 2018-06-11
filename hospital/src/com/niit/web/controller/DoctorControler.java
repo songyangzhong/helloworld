@@ -113,6 +113,12 @@ public class DoctorControler {
 		return "case";
 	}
 	
+	@RequestMapping("/findDoctorsByDepartmentId")
+	public String findDoctorsByDepartmentId(Integer depId,Model model){
+		System.out.println(depId);
+		Department department = departmentService.findDepartmentById(depId);
+		model.addAttribute("doctors", department.getDoctorsByDepartmentId());
+		return "doctors_depId";
+	}
 	
-
 }

@@ -17,6 +17,7 @@ public class Doctor {
     private Collection<Case> casesByDoctorId;
     private Department departmentByDepartmentId;
     private Collection<Register> registersByDoctorId;
+    private Collection<Patient> patients;
     
     public Doctor() {
 		super();
@@ -117,6 +118,16 @@ public class Doctor {
 
 	public Collection<Register> getRegistersByDoctorId() {
 		return registersByDoctorId;
+	}
+	
+	
+
+	public Collection<Patient> getPatients() {
+		return patients;
+	}
+
+	public void setPatients(Collection<Patient> patients) {
+		this.patients = patients;
 	}
 
 	public void setRegistersByDoctorId(Collection<Register> registersByDoctorId) {

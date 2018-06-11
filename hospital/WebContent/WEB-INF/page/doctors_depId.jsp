@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE HTML>
 <html>
@@ -25,32 +25,36 @@
 <!-- MainForm -->
 <div id="MainForm">
 <div class="form_boxA">
-<h2>科室表</h2>
+<h2>医生信息</h2>
 <table cellpadding="0" cellspacing="0">
 <tr>
+<th>医生编号</th>
 <th>科室编号</th>
-<th>科室名称</th>
-<th>挂号费</th>
-<th>科室主任编号</th>
+<th>姓名</th>
+<th>性别</th>
+<th>年龄</th>
+<th>联系方式</th>
 <th>创建时间</th>
-
 <th>操作</th>
 </tr>
 
-<c:forEach items="${departments}" var="d">
+<c:forEach items="${doctors}" var="doctor">
 <tr>
-<td>${d.departmentId }</td>
-<td>${d.departmentName }</td>
-<td>${d.registerCost }</td>
-<td>${d.doctorId }</td>
-<td>${d.createTime }</td>
-<td><a href="${pageContext.request.contextPath}/doctor/findDoctorsByDepartmentId?depId=${d.departmentId }">医生</a> |<a href="#">修改</a> | <a href="${pageContext.request.contextPath}/department/deleteById?id=${d.departmentId}">删除</a></td>
+<td>${doctor.doctorId}</td>
+<td>${doctor.departmentId}</td>
+<td>${doctor.doctorName}</td>
+<td>${doctor.gender}</td>
+<td>${doctor.age}</td>
+<td>${doctor.phoneNumber}</td>
+<td>${doctor.createTime}</td>
+
+<td> |<a href="${pageContext.request.contextPath}/doctor/updateDoctor_toTab?id=${doctor.doctorId}">修改</a> | <a href="${pageContext.request.contextPath}/doctor/deleteDoctorById?id=${doctor.doctorId}">删除</a></td>
 </tr>
 </c:forEach>
-
 </table>
 </div>
 </div>
+<!-- /MainForm -->
 <!-- /MainForm -->
 
 </body>

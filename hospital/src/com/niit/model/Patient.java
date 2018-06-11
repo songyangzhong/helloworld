@@ -21,6 +21,7 @@ public class Patient {
 	private Ward WardByWardId;
 	private Collection<Register> registersByPatientId;
 	private Set<Inspect> inspects = new HashSet<Inspect>();
+	private Collection<Doctor> doctors;
 
 	public Set<Inspect> getInspects() {
 		return inspects;
@@ -52,6 +53,15 @@ public class Patient {
 
 	public void setPatientName(String patientName) {
 		this.patientName = patientName;
+	}
+
+	
+	public Collection<Doctor> getDoctors() {
+		return doctors;
+	}
+
+	public void setDoctors(Collection<Doctor> doctors) {
+		this.doctors = doctors;
 	}
 
 	public String getPassword() {

@@ -29,5 +29,9 @@
             </key>
             <one-to-many not-found="ignore" class="com.niit.model.Register"/>
         </set>
+          <set name="patients" table="doctor_patient">
+        	<key column="doctorId"></key>
+        	<many-to-many class="com.niit.model.Patient" column="patientId"></many-to-many>
+    	</set> 
     </class>
 </hibernate-mapping>

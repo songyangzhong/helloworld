@@ -1,6 +1,7 @@
 package com.niit.web.controller;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.model.Doctor;
 import com.niit.model.Inspect;
+import com.niit.model.Patient_Inspect;
 import com.niit.service.IDoctorService;
 import com.niit.service.IPatientService;
 import com.niit.util.MD5keyBean;
@@ -113,9 +115,9 @@ public class PatientController {
 		ModelAndView mv = new ModelAndView();
 
 		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
-		Set<Inspect> inspects = patientForm.getInspects();
-		mv.addObject("inspects", inspects);
+		List<Patient_Inspect> patient_Inspects = patientService.findInspectByPatientId(patientForm.getPatientId());
 		mv.addObject("patientForm", patientForm);
+		mv.addObject("patient_Inspects", patient_Inspects);
 
 		mv.setViewName("/patient/inspect");
 		return mv;

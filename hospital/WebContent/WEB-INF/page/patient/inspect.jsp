@@ -31,20 +31,16 @@
 <th>病人编号</th>
 <th>病人姓名</th>
 <th>检查项目名称</th>
-<th>花费金额</th>
-<th>描述</th>
-<th>创建时间</th>
+<th>检查结果</th>
 </tr>
 
-<c:forEach items="${inspects}" var="inspect">
+<c:forEach items="${patient_Inspects}" var="patient_Inspect">
 <tr>
-<td>${inspect.inspectId}</td>
-<td>${patientForm.patientId}</td>
-<td>${patientForm.patientName}</td>
-<td>${inspect.inspectName}</td>
-<td>${inspect.cost}</td>
-<td>${inspect.description}</td>
-<td>${inspect.createTime}</td>
+<td>${patient_Inspect.inspectId}</td>
+<td>${patient_Inspect.patientId}</td>
+<td>${patient_Inspect.patientName}</td>
+<td>${patient_Inspect.inspectName}</td>
+<td>${patient_Inspect.result}</td>
 </tr>
 </c:forEach>
 

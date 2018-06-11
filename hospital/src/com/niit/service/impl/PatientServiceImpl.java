@@ -1,5 +1,6 @@
 package com.niit.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.niit.dao.IPatientDao;
 import com.niit.model.Patient;
+import com.niit.model.Patient_Inspect;
 import com.niit.service.IPatientService;
 import com.niit.util.MD5keyBean;
 import com.niit.web.form.PatientForm;
@@ -125,6 +127,28 @@ public class PatientServiceImpl implements IPatientService{
 		}else {
 			return null;
 		}
+	}
+
+	@Override
+	public List<Patient_Inspect> findInspectByPatientId(int patientId) {
+		List<Object[]> objects = patientDao.findInspectByPatientId(patientId);
+		List<Patient_Inspect> patient_Inspects = new ArrayList<>();
+		Patient_Inspect patient_Inspect = null;
+		for(int i=0;i<objects.size();i++) {
+			Object[] Object = objects.get(i);
+			patient_Inspect = new Patient_Inspect();
+			patient_Inspect.setInspectId((int) Object[0]);
+			patient_Inspect.setPatientId((int) Object[1]);
+			patient_Inspect.setPatientName((String) Object[2]);
+			patient_Inspect.setInspectName((String) Object[3]);
+			patient_Inspect.setResult((String) Object[4]);
+			patient_Inspects.add(patient_Inspect);
+			System.out.println("-----------------------");
+			System.out.println("inspectId : " + Object[0]);
+			System.out.println("inspectName : " + Object[3]);
+			System.out.println("-----------------------");
+		}
+		return patient_Inspects;
 	}
 
 }

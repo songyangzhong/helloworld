@@ -41,6 +41,7 @@
 						class="cks">检查信息</a><img class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
 				</dd>
 			</dl>
+			<!-- 
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="${pageContext.request.contextPath}/img/coin10.png" /><img class="icon2"
@@ -54,6 +55,7 @@
 						class="cks">医生信息</a><img class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
 				</dd>
 			</dl>
+			 -->
 
 		</div>
 

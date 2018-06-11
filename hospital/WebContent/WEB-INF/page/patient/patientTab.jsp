@@ -53,10 +53,7 @@
 					<td>${patientForm.phoneNumber}</td>
 					<td>${patientForm.createTime}</td>
 
-					<td><a
-						href="${pageContext.request.contextPath}/patient/beforeUpdate?patientId=${patientForm.patientId}">修改</a>
-						| <a
-						href="${pageContext.request.contextPath}/patient/deleteById?patientId=${patientForm.patientId}">删除</a></td>
+					<td><a href="${pageContext.request.contextPath}/patient/beforeUpdate?patientId=${patientForm.patientId}">修改</a></td>
 				</tr>
 
 			</table>

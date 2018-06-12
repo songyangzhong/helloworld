@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Set;
 
 import com.niit.model.Case;
+import com.niit.model.Doctor;
 import com.niit.model.Inspect;
 import com.niit.model.Register;
 import com.niit.model.Ward;
@@ -22,6 +23,15 @@ public class PatientForm {
 	private Date createTime;
 	private String salt;
 	private Set<Inspect> inspects;
+	private Collection<Doctor> doctors;
+
+	public Collection<Doctor> getDoctors() {
+		return doctors;
+	}
+
+	public void setDoctors(Collection<Doctor> doctors) {
+		this.doctors = doctors;
+	}
 
 	public Set<Inspect> getInspects() {
 		return inspects;

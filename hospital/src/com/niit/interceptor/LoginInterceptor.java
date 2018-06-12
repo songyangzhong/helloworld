@@ -34,17 +34,14 @@ public class LoginInterceptor implements HandlerInterceptor {
 		if (!requestURI.contains("error") && !requestURI.contains("login") && !requestURI.contains("Login")
 				&& !requestURI.contains("register") && !requestURI.contains("Register")) {
 			Doctor doctor = (Doctor) request.getSession().getAttribute("doctor");
-			if (doctor != null) {
+			PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
+			if (doctor != null || patientForm != null) {
 				return true;
 			} else if (requestURI.contains("doctor") || requestURI.contains("findAll")) {
 				// response.sendRedirect(request.getContextPath() + "/doctor/login");
 				request.setAttribute("error", "未登录");
 				request.getRequestDispatcher("/doctor/error").forward(request, response);
 				return false;
-			}
-			PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
-			if (patientForm != null) {
-				return true;
 			} else if (requestURI.contains("patient") || requestURI.contains("Patient")) {
 				// response.sendRedirect(request.getContextPath() + "/patient/login");
 				request.setAttribute("error", "未登录");

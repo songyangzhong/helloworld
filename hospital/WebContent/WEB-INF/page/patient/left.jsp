@@ -41,7 +41,7 @@
 						class="cks">检查信息</a><img class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
 				</dd>
 			</dl>
-			<!-- 
+			
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="${pageContext.request.contextPath}/img/coin10.png" /><img class="icon2"
@@ -51,11 +51,11 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="${pageContext.request.contextPath}/img/coin111.png" /><img class="coin22"
-						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/patient/doctTab" target="main"
+						src="${pageContext.request.contextPath}/img/coin222.png" /><a href="${pageContext.request.contextPath}/doctor/findDoctorsByPatientId" target="main"
 						class="cks">医生信息</a><img class="icon5" src="${pageContext.request.contextPath}/img/coin21.png" />
 				</dd>
 			</dl>
-			 -->
+			
 
 		</div>
 

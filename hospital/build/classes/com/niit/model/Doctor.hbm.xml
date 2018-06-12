@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.niit.model.Doctor" table="t_doctor" schema="hospital">
+    <class name="com.niit.model.Doctor" table="t_doctor" schema="hospital" lazy="false">
         <id name="doctorId" column="DoctorId"/>
         <property name="departmentId" column="DepartmentId"/>
         <property name="doctorName" column="DoctorName"/>
@@ -29,7 +29,7 @@
             </key>
             <one-to-many not-found="ignore" class="com.niit.model.Register"/>
         </set>
-          <set name="patients" table="doctor_patient">
+        <set name="patients" table="doctor_patient">
         	<key column="doctorId"></key>
         	<many-to-many class="com.niit.model.Patient" column="patientId"></many-to-many>
     	</set> 

@@ -43,13 +43,11 @@ $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hi
 <form action="${pageContext.request.contextPath}/doctor/updateDoctor" method="post" >
 <table cellpadding="0" cellspacing="0">
 <tr>
-<th width="100">医生编号 <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL" style="width:100px;"><input name="doctorId" type="text" size="5" value="${doctor.doctorId }"></div></td>
+<td><input name="doctorId" type="hidden" size="5" value="${doctor.doctorId}"></div></td>
 </tr>
 <tr>
-<th width="100">科室编号 <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL" style="width:100px;"><input name="departmentId" type="text" size="5" value="${doctor.departmentId}"></div></td>
- </tr>
+<td><input name="departmentId" type="hidden" size="5" value="${doctor.departmentId}"></div></td>
+</tr>
 <tr>
 <th>医生姓名 <span class="f_cB">*</span></th>
 <td><div class="txtbox floatL" style="width:100px;"><input name="doctorName" type="text" size="5" value="${doctor.doctorName}"></div></td>

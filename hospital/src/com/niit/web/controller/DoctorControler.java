@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.print.Doc;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -21,6 +20,7 @@ import com.niit.service.IDoctorService;
 import com.niit.service.IPatientService;
 import com.niit.service.impl.PatientServiceImpl;
 import com.niit.util.MD5keyBean;
+import com.niit.web.form.PatientForm;
 
 @Controller
 @RequestMapping("/doctor")
@@ -70,7 +70,7 @@ public class DoctorControler {
 		doctor.setDepartmentByDepartmentId(department);
 		department.getDoctorsByDepartmentId().add(doctor);
 		Doctor saveDoctor = doctorService.saveDoctor(doctor);
-		request.setAttribute("doctor", saveDoctor);
+		request.getSession().setAttribute("doctor", saveDoctor);
 		return "/index";
 	}
 	
@@ -121,6 +121,14 @@ public class DoctorControler {
 		Department department = departmentService.findDepartmentById(depId);
 		model.addAttribute("doctors", department.getDoctorsByDepartmentId());
 		return "doctors_depId";
+	}
+	
+	@RequestMapping("/findDoctorsByPatientId")
+	public String findPatientsByDoctorId(HttpServletRequest request,Model model) {
+		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
+		model.addAttribute("doctors", patientForm.getDoctors());
+		System.out.println(patientForm.getDoctors().size());
+		return "/patient/doctor_patient";
 	}
 	
 }

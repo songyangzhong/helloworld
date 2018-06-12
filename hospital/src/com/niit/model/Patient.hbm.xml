@@ -34,7 +34,7 @@
         	<many-to-many class="com.niit.model.Inspect" column="inspectId"></many-to-many>
     	</set>
     	
-    	<set name="doctors" table="doctor_patient">
+    	<set name="doctors" table="doctor_patient" lazy="false">
         	<key column="patientId"></key>
         	<many-to-many class="com.niit.model.Doctor" column="doctorId"></many-to-many>
     	</set>

@@ -88,6 +88,7 @@ public class PatientServiceImpl implements IPatientService{
 		patientForm.setWardId(patient.getWardId());
 		patientForm.setInspects(patient.getInspects());
 		patientForm.setSalt(patient.getSalt());
+		patientForm.setDoctors(patient.getDoctors());
 		return patientForm;
 	}
 	
@@ -105,7 +106,7 @@ public class PatientServiceImpl implements IPatientService{
 		patient.setWardId(patientForm.getWardId());
 		patient.setSalt(patientForm.getSalt());
 		patient.setInspects(patientForm.getInspects());
-		
+		patient.setDoctors(patientForm.getDoctors());
 		return patient;
 	}
 
@@ -143,10 +144,6 @@ public class PatientServiceImpl implements IPatientService{
 			patient_Inspect.setInspectName((String) Object[3]);
 			patient_Inspect.setResult((String) Object[4]);
 			patient_Inspects.add(patient_Inspect);
-			System.out.println("-----------------------");
-			System.out.println("inspectId : " + Object[0]);
-			System.out.println("inspectName : " + Object[3]);
-			System.out.println("-----------------------");
 		}
 		return patient_Inspects;
 	}

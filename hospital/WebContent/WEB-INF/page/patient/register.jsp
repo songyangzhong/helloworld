@@ -53,6 +53,7 @@
 				<div class="btn_box floatR"><input type="submit" value="注册"/></div>
 			</div>
 			</form>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已注册？<a href="${pageContext.request.contextPath}/patient/login">去登陆</a></p>
 		</div>
 	</div>
 	<!-- 登录body  end -->

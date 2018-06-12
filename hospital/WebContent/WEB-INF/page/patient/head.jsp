@@ -17,7 +17,7 @@
 			<img class="headLogo" src="${pageContext.request.contextPath}/img/logLOGO.png"/>
 		</div>
 		<div class="headR">
-			<span style="color:#FFF">欢迎：${patient.patientName}</span>
+			<span style="color:#FFF">欢迎：${patientForm.patientName}</span>
 			<span style="color:#FFF"><a href="${pageContext.request.contextPath}/patient/login" target="_blank">【登录】</a></span> 
 			<span style="color:#FFF"><a href="${pageContext.request.contextPath}/patient/register" target="_blank">【注册】</a></span> 
 		</div>

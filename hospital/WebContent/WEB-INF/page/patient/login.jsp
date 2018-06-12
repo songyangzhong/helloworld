@@ -32,7 +32,7 @@
 					placeholder="输入用户名" name="patientName"/>
 			</div>
 			<div class="lgD">
-				<img class="img1" src="${pageContext.request.contextPath}/img/logPwd.png" /><input type="text"
+				<img class="img1" src="${pageContext.request.contextPath}/img/logPwd.png" /><input type="password"
 					placeholder="输入用户密码" name="password"/>
 			</div>
 			<div class="logC">
@@ -41,6 +41,7 @@
 			</div>
 			</form>
 			<p>${message}</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未注册？<a href="${pageContext.request.contextPath}/patient/register">去注册</a></p>
 		</div>
 	</div>
 	<!-- 登录body  end -->

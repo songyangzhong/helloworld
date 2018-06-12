@@ -41,7 +41,6 @@
 <td>${case1.condition}</td>
 <td>${case1.createTime}</td>
 
-<td><a href="#">修改</a> | <a href="${pageContext.request.contextPath}/case/deleteByCaseId?patientId=${case1.caseId}">删除</a></td>
 </tr>
 </c:forEach>
 

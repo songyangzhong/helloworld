@@ -23,8 +23,6 @@ public class CaseController {
 	
 	@RequestMapping("findByPatientId")
     public ModelAndView findByPatientId(HttpServletRequest request) throws CustomException{
-		//------
-		//从Session中获取病人信息
 		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
 		if(patientForm == null) {
 			throw new CustomException("未登录");

@@ -21,7 +21,7 @@ public class DoctorServiceImpl implements IDoctorService{
 	private IDoctorDao doctorDao;
 
 	@Override
-	public void saveDoctor(Doctor doctor) {
+	public Doctor saveDoctor(Doctor doctor) {
 		//md5
 		MD5keyBean md5keyBean = new MD5keyBean();
 		Random rand = new Random();
@@ -32,7 +32,9 @@ public class DoctorServiceImpl implements IDoctorService{
 		doctor.setPassword(md5_password);
 		//
 		doctor.setCreateTime(new Date());
-		doctorDao.save(doctor);
+		int doctorId = doctorDao.save(doctor);
+		doctor.setDoctorId(doctorId);
+		return doctor;
 	}
 	
 	@Override

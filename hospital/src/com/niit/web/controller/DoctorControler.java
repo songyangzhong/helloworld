@@ -64,12 +64,13 @@ public class DoctorControler {
 	
 	
 	@RequestMapping("/doctorRegister")
-	public String register(Doctor doctor,Integer departmentId){
+	public String register(Doctor doctor,Integer departmentId,HttpServletRequest request){
 		Department department = this.departmentService.findDepartmentById(departmentId);
 		doctor.setCreateTime(new Date());
 		doctor.setDepartmentByDepartmentId(department);
 		department.getDoctorsByDepartmentId().add(doctor);
-		doctorService.saveDoctor(doctor);
+		Doctor saveDoctor = doctorService.saveDoctor(doctor);
+		request.setAttribute("doctor", saveDoctor);
 		return "/index";
 	}
 	

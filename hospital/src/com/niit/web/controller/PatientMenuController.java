@@ -13,6 +13,11 @@ public class PatientMenuController {
         return "patient/index";
     }
     
+    @RequestMapping("/patient/error")
+    public String patienterror(){
+        return "/patient/error"; 
+    }
+    
     @RequestMapping("patient/left")
     public String left(){
         return "patient/left"; 

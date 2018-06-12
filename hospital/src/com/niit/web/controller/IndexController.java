@@ -14,6 +14,11 @@ public class IndexController {
         return "index"; //该方法的执行最后跳转到index.jsp页面,所以给出该视图的名称
     }
     
+    @RequestMapping("/doctor/error")
+    public String doctorerror(){
+        return "error"; 
+    }
+    
     @RequestMapping({"/left"})
     public String left(){
         return "left"; //该方法的执行最后跳转到index.jsp页面,所以给出该视图的名称

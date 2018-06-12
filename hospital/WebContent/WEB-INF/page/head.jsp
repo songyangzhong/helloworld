@@ -20,7 +20,8 @@
 		<div class="headR">
 			<span style="color:#FFF">欢迎:${doctor.doctorName}</span>
 			<span style="color:#FFF"><a href="${pageContext.request.contextPath}/doctor/login" target="_blank">【登录】</a></span> 
-			<span style="color:#FFF"><a href="${pageContext.request.contextPath}/doctor/register" target="_blank">【注册】</a></span> 
+			<span style="color:#FFF"><a href="${pageContext.request.contextPath}/doctor/register" target="_blank">【注册】</a></span><br></br>
+			<span style="color:#FFF"><a href="${pageContext.request.contextPath}/patient/login" target="_blank">【病人入口】</a></span> 
 		</div>
 	</div>
 </body>

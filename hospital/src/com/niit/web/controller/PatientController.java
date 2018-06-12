@@ -32,8 +32,6 @@ public class PatientController {
 
 	@RequestMapping("findPatientByPatientId")
 	public ModelAndView findPatientByPatientId(HttpServletRequest request) {
-		// -----
-		// 浠嶴ession涓幏鍙杙atient
 		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
 
 		ModelAndView mv = new ModelAndView();
@@ -50,8 +48,6 @@ public class PatientController {
 
 	@RequestMapping("beforeUpdate")
 	public ModelAndView beforeUpate(HttpServletRequest request) {
-		// ---------
-		// 浠嶴ession涓幏鍙杙atient
 		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
 
 		ModelAndView mv = new ModelAndView();
@@ -101,17 +97,13 @@ public class PatientController {
 			return mv;
 		} else {
 			mv.setViewName("forward:/patient/login");
-			mv.addObject("message", "鐢ㄦ埛鍚嶆垨瀵嗙爜閿欒");
+			mv.addObject("message", "用户名或密码错误");
 			return mv;
 		}
 	}
 
 	@RequestMapping("findInspectByPatientId")
 	public ModelAndView findInspectByPatientId(HttpServletRequest request) {
-		// 鎬濊矾锛氭寜鐓т竴瀵瑰鏂瑰紡鏌ヨ
-		// 澶氳〃鏌ヨpatient/inspect/patient_inspect
-		// 鏂规涓�锛氬垱寤烘柊绫讳笌绗笁寮犺〃瀵瑰簲
-		// 鏂规浜岋細澶氳〃鏌ヨ杩斿洖List<Object> 鐩存帴鐢�
 		ModelAndView mv = new ModelAndView();
 
 		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");

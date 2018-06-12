@@ -5,7 +5,7 @@ import java.util.List;
 import com.niit.model.Doctor;
 
 public interface IDoctorService {
-	public void saveDoctor(Doctor doctor);
+	public Doctor saveDoctor(Doctor doctor);
     public Doctor findDoctorById(Integer doctorId);
     public List<Doctor> findAll();
     public void deleteDoctorById(Integer doctorId);

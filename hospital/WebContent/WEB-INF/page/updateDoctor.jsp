@@ -52,7 +52,7 @@ $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hi
  </tr>
 <tr>
 <th>医生姓名 <span class="f_cB">*</span></th>
-<td><div class="txtbox floatL" style="width:100px;"><input name="doctorName" type="text" size="5" value="张三"></div></td>
+<td><div class="txtbox floatL" style="width:100px;"><input name="doctorName" type="text" size="5" value="${doctor.doctorName}"></div></td>
 </tr>
 <tr>
 						<th>性别 <span class="f_cB">*</span></th>

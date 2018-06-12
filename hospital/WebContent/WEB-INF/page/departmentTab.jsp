@@ -44,7 +44,7 @@
 <td>${d.registerCost }</td>
 <td>${d.doctorId }</td>
 <td>${d.createTime }</td>
-<td><a href="${pageContext.request.contextPath}/doctor/findDoctorsByDepartmentId?depId=${d.departmentId }">医生</a> |<a href="#">修改</a> | <a href="${pageContext.request.contextPath}/department/deleteById?id=${d.departmentId}">删除</a></td>
+<td><a href="${pageContext.request.contextPath}/doctor/findDoctorsByDepartmentId?depId=${d.departmentId }">医生</a> |<a href="#">修改</a> <%-- | <a href="${pageContext.request.contextPath}/department/deleteById?id=${d.departmentId}">删除</a> --%></td>
 </tr>
 </c:forEach>
 

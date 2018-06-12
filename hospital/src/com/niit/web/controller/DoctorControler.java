@@ -82,8 +82,9 @@ public class DoctorControler {
 	}
 	
 	@RequestMapping("/updateDoctor")
-	public String updateDoctor_toTab(Doctor doctor){
-		doctorService.updateDoctor(doctor);
+	public String updateDoctor_toTab(Doctor doctor,HttpServletRequest request){
+		Doctor updateDoctor = doctorService.updateDoctor(doctor);
+		request.getSession().setAttribute("doctor",updateDoctor);
 		return "forward:findAll";
 	}
 	

@@ -51,7 +51,7 @@ public class DoctorServiceImpl implements IDoctorService{
 	}
 
 	@Override
-	public void updateDoctor(Doctor doctor) {
+	public Doctor updateDoctor(Doctor doctor) {
 		Doctor doctor_db = findDoctorById(doctor.getDoctorId());
 		String password_db = doctor_db.getPassword();
 		//密码已修改
@@ -68,7 +68,7 @@ public class DoctorServiceImpl implements IDoctorService{
 		}
 		this.doctorDao.getSession().evict(doctor_db);
 		doctor.setCreateTime(new Date());
-		this.doctorDao.update(doctor);
+		return this.doctorDao.update(doctor);
 	}
 
 	@Override

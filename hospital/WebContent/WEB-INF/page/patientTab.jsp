@@ -56,8 +56,8 @@
 
 					<td><a
 						href="#">修改</a>
-						| <a
-						href="#">删除</a></td>
+						<!-- | <a
+						href="#">删除</a> --></td>
 				</tr>
 				</c:forEach>
 			</table>

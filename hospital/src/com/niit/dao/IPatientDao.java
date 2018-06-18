@@ -10,5 +10,7 @@ public interface IPatientDao extends BaseDao<Patient>{
 	Patient login(PatientForm patientForm);
 
 	List<Object[]> findInspectByPatientId(int patientId);
+
+	Patient findByPhone(String phone);
 		
 }

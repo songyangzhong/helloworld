@@ -48,4 +48,16 @@ public class PatientDaoImpl extends BaseDaoImpl<Patient> implements IPatientDao 
 		return list;
 	}
 
+	@Override
+	public Patient findByPhone(String phone) {
+		String queryString = "from " + super.getClassName() + " p where p.phoneNumber=?";
+		Object[] objects = new Object[] {phone};
+		List<Patient> patients = (List<Patient>) ht.find(queryString, objects);
+		Patient patient = null;
+		if (!patients.isEmpty()) {
+			patient = patients.get(0);
+		}
+		return patient;
+	}
+
 }

@@ -16,5 +16,6 @@ public interface IPatientService {
     public void update(PatientForm patientForm);
 	public PatientForm login(PatientForm patientForm);
 	public List<Patient_Inspect> findInspectByPatientId(int patientId);
+	public Patient findByPhone(String phone);
     
 }

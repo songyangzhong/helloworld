@@ -127,7 +127,6 @@ public class DoctorControler {
 	public String findPatientsByDoctorId(HttpServletRequest request,Model model) {
 		PatientForm patientForm = (PatientForm) request.getSession().getAttribute("patientForm");
 		model.addAttribute("doctors", patientForm.getDoctors());
-		System.out.println(patientForm.getDoctors().size());
 		return "/patient/doctor_patient";
 	}
 	

@@ -148,4 +148,9 @@ public class PatientServiceImpl implements IPatientService{
 		return patient_Inspects;
 	}
 
+	@Override
+	public Patient findByPhone(String phone) {
+		return patientDao.findByPhone(phone);
+	}
+
 }
